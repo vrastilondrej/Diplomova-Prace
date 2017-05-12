@@ -1,0 +1,620 @@
+\documentclass[FP,DP]{tulthesis}
+%\hypersetup{
+  %  hidelinks = true,
+%}
+%\usepackage{hyperref}
+\usepackage{blindtext}
+\usepackage{url}
+\usepackage[obeyFinal]{easy-todo}
+\usepackage{polyglossia}
+\usepackage{enumitem}
+\usepackage{array}
+\usepackage{tikz}
+\setdefaultlanguage{czech}
+
+% bibliografie
+\usepackage{natbib}
+\bibliographystyle{agsm}
+
+
+% fonty
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+%\setmainfont[Mapping=tex-text,BoldFont={* Bold},Numbers=OldStyle]{Baskerville 10 Pro}
+%\setsansfont[Mapping=tex-text,BoldFont={* Bold},Numbers=OldStyle]{Myriad Pro}
+%\setmonofont[Scale=MatchLowercase]{Vida Mono 32 Pro}
+
+%TIKZ
+\usetikzlibrary{calc,trees,positioning,arrows,chains,shapes.geometric,%
+    decorations.pathreplacing,decorations.pathmorphing,shapes,%
+    matrix,shapes.symbols}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=1cm, minimum height=1cm,text centered, draw=black,text width=2cm,fill=orange!20]
+\tikzstyle{io} = [rectangle, rounded corners, minimum width=1cm, minimum height=1cm,text centered, draw=black,text width=2cm,fill=orange!20]
+\tikzstyle{process} = [rectangle, minimum width=1cm, minimum height=0.8cm, text centered, draw=black, fill=orange!30,text width=2.5cm]
+\tikzstyle{decision} = [rectangle, rounded corners, minimum width=1cm, minimum height=0.8cm,text centered, draw=black,text width=2cm]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{arrow2} = [thick,-,>=stealth]
+
+% příkazy specifické pro tento dokument
+\newcommand{\argument}[1]{{\ttfamily\color{\tulcolor}#1}}
+\newcommand{\prikaz}[1]{\argument{\textbackslash #1}}
+\newenvironment{myquote}{\begin{list}{}{\setlength\leftmargin\parindent}\item[]}{\end{list}}
+\newenvironment{listing}{\begin{myquote}\color{\tulcolor}}{\end{myquote}}
+\sloppy
+
+% deklarace pro titulní stránku
+\TULtitle{Programování v pregraduální přípravě učitelů informatiky}{Programming in undergraduate training of CS teachers}
+\TULprogramme{N1101}{Matematika}{Mathematics}
+\TULbranch{7504T077}{Učitelství informatiky pro střední školy}{Teacher training for lower and upper-secondary school, Informatics}
+\TULbranch{7504T089}{Učitelství matematiky pro střední školy}{Teacher Training for Upper Secondary Schools, Mathematics}
+\TULauthor{Bc. Ondřej Vraštil}
+\TULsupervisor{Mgr. Jan Berki, Ph.D.}
+\TULyear{2016}
+
+
+% příkazy
+\newcommand{\verze}{1.3}
+\newcommand{\chapquote}[3]{\begin{quotation} \textit{#1} \end{quotation} \begin{flushright} - #2, \textit{#3}\end{flushright} }
+
+\newcommand{\ahoj}[2]{\begin{quotation} \textit{#1} \end{quotation} \begin{flushright} - \textit{#2}\end{flushright} }
+
+
+
+
+
+\begin{document}
+
+\ThesisStart{male}
+
+\begin{abstractCZ}
+Tato zpráva popisuje třídu \texttt{tulthesis} pro sazbu absolventských prací
+Technické univerzity v~Liberci pomocí typografického systému \LaTeX.
+\end{abstractCZ}
+
+\vspace{2cm}
+
+\begin{abstractEN}
+This report describes the \texttt{tulthesis} package for Technical university of
+Liberec thesis typesetting using the \LaTeX\ typographic system.
+\end{abstractEN}
+
+\clearpage
+
+\begin{acknowledgement}
+Rád bych poděkoval všem, kteří přispěli ke vzniku tohoto dílka.
+\end{acknowledgement}
+
+\tableofcontents
+
+\clearpage
+
+%\begin{abbrList}
+%\textbf{TUL} & Technická univerzita v~Liberci \\
+%\end{abbrList}
+\chapter{Úvod}
+
+
+Nedilnou součastí pripravy budoucich ucitelu informatiky na základních a střednich školách  je vyuka programovani a algoritmizace. Toto téma je nejen obsaženo v rámcových vzdělávacíh programů pro gymnazia, ale stává se i moderním trendem vyučovaní informatiky na základních školách. Ucitel můze znalosti vyuzit nejen pri vyuce samotného programovani, ale i v pridruzenych oblastech jako v robotice nebo v pocitacove vede, ktera se v ruznych formach zacina na nasich zakladnich a strednich skolach objevovat. Nutnou podminkou spravně provedené didaktické transformace látky směrem  k zakovi je nadhled a vzdelani ucitele. Jednou z hlavnich premis je kvalitni vzdělani v ramci pregradualní pripravy, ve ktere by měl student – budouci učitel získat uvod do tématu a vhled do tématu natolik, aby dokazal obstojně predat znalosti svym zakum. Na kvalitu pregraduální pripravy ma vliv mnoho aspektu, jednim z nich je i relevance a aktualita, které mají pro informatiku, jakožto mladý a dynamicky se rozvíjející obor velký význam. Fakulty připravující učitele informatiky by měli pružně reagovat na moderni trendy ve výuce a uspokojit poptavku po kvalifikovaných učitelích.  V dnesni době se na našich zakladnich a strednich skolach zacinaji vyucivat pro školni prostredi nova temata jako je robotika nebo unplugged teaching, pro která je znalost algoritmizace nutná. Jak si naše vysoké školy vedou ve výuce tohoto oboru? Následují moderní trendy a požadavky zaměstnavatelů budoucích absolventů? Je pořadí předmětů během studia smysluplné? Dá se vysledovat podobnost mezi programy napříč republikou? Existuje  jeden nejvhodnější způsob jak učit programovaní budoucí učitele, nebo je možnost volit z více cest? Abychom tyto otázky mohli zodpovědět, je v první řadě nutné pokusit se analyzovat zdroje týkající se programování a pregraduální přípravy učitelů. Dále je potřeba získat data o obsahu jednotlivých předmětů v rámci pregraduální přípravy napříč fakultami v ČR. Fakulty tyto data zveřejňují v sylabech, které jsou volně k dispozici na stránkách jednotlivých fakult. Získaná data budou zkoumána fornou textové analýzy, jež by mohla na výše zmíněné otázky odpovědět. Na výsledcích teoreticko-rešeršní části i praktické části bude postavena závěrečná část, návrh idealního sestavení vhodného konceptu výuky programování na VŠ pro budoucí učitele středních i základních škol.
+% **********************
+% KAPITOLA PROGRAMOVÁNÍ
+% **********************
+\listoftodos
+\chapter{Programování}
+Pokud máme zkoumat pregradualní přípravu učitelů informatiky v oblasti programování, měli bychom odpovědět na důležitou otázku -- Proč se vlastně zařazuje výuka programování do přípravy budoucích učitelů informatiky? Jaký zde má smysl? Odpověd na tuto otázku není jednoduchá, proto si ji budeme strukturovat -- podíváme se na učitele informatiky a jeho znalost programování z několika pohledů, které ho do různé míry definují. 
+% podkapitola  Algoritmus a programování -- odborné definice a vztahy
+% **********************
+\section{Algoritmus a programování -- odborné definice a vztahy}
+\ahoj{,,Before there were computers, there were algorithms. But now that there are computers,
+there are even more algorithms, and algorithms lie at the heart of computing. ``}{Introduction to Algorithms}
+
+Algoritmus je jeden z ústředních (ne li ten vůbec nejústřednější) pojem z oblasti informatiky. \citep*{didaktikderinformatik} \todo{mají se řešit přímé citace kurzívou?}V literatuře najdeme několik jeho definic. Schubertová a Schwill popisují algoritmus jako formálními prostředky popsatelný, mechanicky proveditelný postpup k řešení třídy problému. \citeyearpar[s. 4]{didaktikderinformatik} Cormen popisuje algoritmus jako sadu kroků ke splnění úlohy, počítačový algoritmus jako sadu korků ke splnění úlohy tak přesně popsaných, aby je dokázal vykonat počítač.\citeyearpar[s. 1]{algunlocked}. Pro Skienu je aloritmus procedura ke splnění konkrétní úlohy a myšlenka, která stojí za počítačovým programem. \citeyearpar[s. 3]{algdesignman}. Cormen, Leiserson, Rivest\footnote{písmeno ,,R`` v RSA} a Stein ve své obsáhlé publikaci popisují algoritmus jako jasně definovanou výpočetní proceduru, která si bere \todo{lepší slovo} hodnotu nebo soubor hodnot jako vstup a produkuje hodnotu nebo soubor hodnot jako výstup.\citeyearpar[s. 5]{intralg} Známý informatik a tvůrce typografického systému Tex\footnote{kterým je psána i tato práce} definuje algoritmus jako konečnou množinou pravidel, která popisují posloupnost operací pro řešení jistého typu problémů.\citeyearpar[s. 5]{knuth} Další definici najdeme u Harela a Feldmana: Algoritmus je abstraktní  návod předepisující proces, který by mohl být proveden člověkem, počítačem nebo jinými prostředky. \citeyearpar[s. XII]{spirit}. 
+
+Podle Knutha \citeyearpar[s. 4-6]{knuth} musí splňovat několik základní vlastností:
+ \begin{itemize}
+\setlength\itemsep{0.1em}
+\item \textit {Konečnost} -- Algoriitmus musí vždy po určitém počtu kroků skončit.
+\item \textit {Určitost} -- Každý krok algoritmu musí být přesně definován a pro každý případ v něm musá být s určitostí a jednoznačností poposány prováděné operace.
+\item \textit {Vstup} -- Každý algoritmus má nula nebo více vstupů: to jsou veličiny, které do algoritmu zadáme před jeho zahájením nebo které načteme dynamicky za běhu.
+\item \textit {Výstup} -- Algoritmus má také jeden nebo více výstupů: to jsou veličiny, které mají zadaný vztah ke vstupům.
+\item \textit {Efektivita} -- Algoritmus by měl být zároveň efektivním, což znamená, že všechny jeho operace musí být v rozumné míře jednoduché, takže by je v principu měl být schopen přesně a za konečnou dobu provést kdokoli s tužkou a papírem.
+\end{itemize}
+
+Často najdeme přirovnání algoritmu ke kuchařskému receptu jako například u Knutha \citeyearpar[s. 6]{knuth} nebo u  u Harela a Feldmana  \citeyearpar[s. 4]{spirit}. Vstupem jsou pak v tomto případě suroviny, výstupem je hotové jídlo. Recept je konečný, naše vaření nebude probíhat nekonečně dlouho a efektivní -- můžeme je provést v relativně krátkém čase. Dále v textu už budeme používat algoritmus ve smyslu počítačového algoritmu, tedy takový algoritmus jehož vykonavatalem je počítač. Proces převodu procesu na jednotlivé kroky nazýváme algoritmizace \citep{didaktikderinformatik}
+\todo{popis co je algoritmický problém}
+
+\section{Vztah algoritmizace a programování}
+Pokud chceme po počítači aby proved činnost podle algoritmu, musíme mu dát instrukce v takové podobě, aby jim rouzuměl. Algoritmus zapsaný srozumitelnou formou pro počítač nazýváme \textbf{program}. Program se zapisuje v \textbf{programovacím jazyku}, 
+
+
+
+
+\todo{Programování z pohledu naší společnosti.}\todo{Programování z  pohledu RVP}
+% podkapitola  Programování z pohledu deklarovaného kurikula ZŠ a SŠ
+% **********************
+\section{Programování z pohledu deklarovaného kurikula ZŠ a SŠ}
+Jedním z určujících dokumentů pro vzdělávání na základních a středních školách je Rámcový vzdělávací program. Tento koncepční dokument určuje a specifikuje obsah výuky na republikové úrovni a odvyjí se od něho dokumenty na úrovni nižší -- školní vzdělácací programy, má tedy zásadní vliv. V jaké míře je zde programování nebo algoritmizace obsažena?
+ 
+V RVP pro základní vzdělávání \citep{rvpzv} spadá pod tzv. vzdělávací oblast Informační a komunikační \textit{Informační a komunikační technologie}. Charakteristika oblasti pojem algoritmus, programování ani jím příbuzná nebo odvozená slova neuvádí. Zaměřuje se spíše na výuku práce s výpočetní technikou a práci s informací. Zmínku najdeme tzv. cílových zaměřeních kdy je uvedeno, že \textit{Vzdělání v oblasti vede žáka k schopnosti formulovat svůj požadavek a využívat při interakci s počítačem algoritmické myšlení}. RVP dále kategorizuje vzdělávací obsah a rozděluje ho do učiva prvního a druhého stupně, pojem algoritmizace ani programování zde nenajdeme. 
+
+V RVP pro gymnázia se mění (rozšiřuje) název vzdělávací oblasti na \textit {Informatika a informační a komunikační technologie}. Jak název napovídá, součástí výky na gymnáziích by měl být záklay informatiky jako vědy. Zaměřuje se hlavně na způsob myšlení \textit {Cílem je zpřístupnit žákům základní pojmy a metody informatiky, napomáhat rozvoji abstraktního, systémového myšlení, podporovat schopnost vhodně vyjadřovat své myšlenky, smysluplnou argumentací je obhajovat a tvůrčím způsobem přistupovat k řešení problémů.} Pojem algorytmus se tu oběvuje už excplitině také \textit {Žák se seznámí se základními principy fungování prostředků ICT a soustředí se na pochopení podstaty a průběhu informačních procesů, algoritmického přístupu k řešení úloh a významu informačních systémů ve společnosti.} I mezi cíly je algoritmizace zastoupena a to přímo jako bod \textit {uplatňování algoritmického způsobu myšlení při řešení problémových úloh}. Za cíl, který by se k algoritmizaci a programování mohl vztahovat také je \textit {porozumění základním pojmům a metodám informatiky jako vědního oboru a k jeho uplatnění v ostatních vědních oborech a profesích}, tento bod můžeme reprezentovat mnoha způsoby. Ve vzdělávacím obsahu se pak oběvuje kategorie\todo{Je to kategorie?} \textit {Zpracování  a prezentace inforací}, kde jedním z očekávaných výstupu je, že žák \textit {aplikuje algoritmický přístup k řešení problémů}. To reflektuje i učivo (které je pro tvorbu ŠVP závazné) a jeho bod \textit {algoritmizace úloh – algoritmus, zápis algoritmu, úvod do programování}, na gymnáziu je tedy výuka programování a algoritmizace \textbf{povinou součástí}, ale bližší cíle vzdělávání nejsou popsány.\todo{lépe}
+
+Vzdělávání na odborných středních školách probíhá samozřejmě podle RVP také, každý obor má svůj vlastní dokument.  Analyzujme nyní výskyt algoritmizace a programování na RVP oboru Informační technologie \todo{citace}, kde by úroveň informatického vzdělávání měla být nejvyšší z celého středoškolského systému. Programování najdeme v tzv. klíčových odborných kompetencích, konkrétně klíčová kopetence Programovat a vyvíjet uživatelská, databázová a webová řešení, tzn. aby absolventi: 
+ \begin{itemize}
+\setlength\itemsep{0.1em}
+\item algoritmizovali úlohy a tvořili aplikace v některém vývojovém prostředí; 
+\item realizovali databázová řešení;  
+\item tvořili webové stránky. 
+\end{itemize}
+ V RVP pro odborné vzdělávání  existují vzdělávací oblasti tak jako v RVP pro gymnázia, dělí se ještě dále na tzv. vzdělávací okruhy podle kterých se na školní úrovni definuje obsah jednotlivých předmětů. Pro programování má odborné vzdělávání samostatný okurh nazvaný \textit {programování a vývoj aplikací} jehož cílem je \textit {naučit žáka vytvářet algoritmy a pomocí programovacího jazyka zapsat  zdrojový  kód  programu}. V tabulce (\ref{table:1}) obsažené v RVP najdeme definované výsledky vzdělávání a učivo.
+%Tabulka odborného vzdělávání
+% ***************************
+%\setlength{\tabcolsep}{0.9em} % for the horizontal padding
+{\renewcommand{\arraystretch}{1.4}% for the vertical padding
+\begin{table}[ht]
+\hyphenpenalty=10
+\footnotesize
+\center
+\caption{Obsahový okruh \textit {programování a vývoj aplikací}} \label{table:1}
+\begin{tabular}{|l|l|}
+\hline
+% první řádek
+Výsledky vzdělávání & Učivo \\\hline
+% druhý řádek
+  \begin{minipage}[t]{0.45\textwidth}
+    Žák:
+\begin{itemize}[leftmargin=*,nosep]
+  	\item zná vlastnosti algoritmu; 
+	\item zanalyzuje úlohu a algoritmizuje ji; 
+	\item zapíše algoritmus vhodným způsobem; 
+\end{itemize}
+  \end{minipage} &
+  \begin{minipage}[t]{0.45\textwidth}
+\textbf{1 Algoritmizace}
+    \begin{itemize}[leftmargin=*,nosep]
+  \item význam, prvky algoritmu  
+\end{itemize}
+  \end{minipage}\\\hline
+% 3 řádek
+  \begin{minipage}[t]{0.45\textwidth}
+\begin{itemize}[leftmargin=*,nosep]
+  	\item použije základní datové typy; 
+	\item použije řídící struktury programu; 
+	\item vytvoří jednoduché strukturované programy;    
+\end{itemize}
+  \end{minipage} &
+  \begin{minipage}[t]{0.45\textwidth}
+\textbf{2 Strukturované programování }
+    \begin{itemize}[leftmargin=*,nosep]
+  \item datové typy
+\item řídicí struktury  
+\end{itemize}
+  \end{minipage}\\\hline
+% 4 řádek
+  \begin{minipage}[t]{0.45\textwidth}
+\begin{itemize}[leftmargin=*,nosep]
+  	\item rozumí pojmům třída, objekt a zná jejich základní vlastnosti; 
+	\item použije jednoduché objekty; 
+\end{itemize}
+  \end{minipage} &
+  \begin{minipage}[t]{0.45\textwidth}
+\textbf{3 Úvod do objektového programování }
+    \begin{itemize}[leftmargin=*,nosep]
+  \item třída, objekt, vlastnosti tříd
+\end{itemize}
+  \end{minipage}\\\hline
+% 5 řádek
+  \begin{minipage}[t]{0.45\textwidth}
+\begin{itemize}[leftmargin=*,nosep]
+  	\item zná výhody použití jazyka SQL; 
+	\item použije základní příkazy jazyka SQL; 
+\end{itemize}
+  \end{minipage} &
+  \begin{minipage}[t]{0.45\textwidth}
+\textbf{4 Základy jazyka SQL}
+    \begin{itemize}[leftmargin=*,nosep]
+  \item základní příkazy (SELECT, UPDATE, INSERT, DELETE)
+\end{itemize}
+  \end{minipage}\\\hline
+% 6 řádek
+  \begin{minipage}[t]{0.45\textwidth}
+\begin{itemize}[leftmargin=*,nosep]
+  	\item aplikuje zásady tvorby WWW stránek; 
+	\item orientuje se ve struktuře HTML stránky;
+  	\item vytvoří webové stránky včetně optimalizace a validace; 
+	\item použije formuláře a skriptovací jazyk.
+\end{itemize}
+  \end{minipage} &
+  \begin{minipage}[t]{0.45\textwidth}
+\textbf{5 Tvorba statických a dynamických webových stránek }
+  \end{minipage}\\\hline
+\end{tabular}
+
+
+\end{table}
+
+% ***************************
+%Tabulka odborného vzdělávání KONEC
+% ***************************
+
+
+Pro odborné školy je tedy vzdělávací obsah blíže specifokován. Najdeme zde i zmínky o jednotlivých programovacích paradigmatech. 
+
+
+Shrňme si, jak je programování a algoritmizace obsažena v RVP všech stupňu vzdělávání a jaký to má důsledek na výuku.
+Celá koncepce RVP dává škole pouze obecný rámec, který by měla dodržovat. Pro jednotlivá témata zde není uvedena časová dotace, což dává možost upřednostnit některá témata před ostatními. Dále zde nejsou uvedeny metody, které mají být při výuce použity, taže např. algoritmizace může být procvičována mnoha různými způsoby.  Pro programování nějsou na národní úrovni určeny ani doporučeny konkrétní programovací jazyky, kromě odborného vzdělávání není ani určeno, jaké paradigma by mělo být při výuce použito. Mezi základními školamy vznikají někdy velké rozdíly, kdy některé ŠVP zahrnují programování (skrze dětské programovací jazyky) na prvním stupni, některé vůbec programování nenasazují.\footnote{Měl jsem osobní zkušenost na dvou základních školách, jedna s využitím disponibilních hodin vyučovala informatiku během 3.-7. ročníku, kdy už ve třetím ročníku výuka obsahovala dětský programovací jazyk Baltík. Druhá škola měla nejnižší možnou dotaci jednu hodinu pro každý stupeň a o výuce programování se zde vůbec neuvažovalo, jednalo spíše o výuku informačních technologií.} Obecně lze říci, že výuka ICT je směřována spíše k ovládání informačních a komunikačních technologií než k práci s algoritmizací a programováním. Pokud bychom měli tvořit vysokoškolskou přípravu podle RVP, v programu ZŠ by se programování nemuselo objevit vůbec, stačilo by osvojení alogritmizace. V programu pro SŠ už se zcela jistě programování objevit musí, nejsme ale omezeni konkrétním programovacím jazykem. Pregraduální příprava z pohledu RVP by také měla obsahovat jak průpravu do paradigmatu strukturovaného programování, tak i objektově orientovaného programování, tak aby byl absolvent schopen zajistit výuku na střední odborné škole oboru informatika.
+\subsection{Deklarované kurikulum výuky informatiky v zahraničí}
+Jelikož je informatika mladý obor a změny v něm opravdu rychlé, kurikulární dokumenty nemusí obsahovat nejaktuálnější trendy v oboru. Analyzujme  proto zakotvení programování ve slovenských kurikulárních dokumentech. Štátný vzdelávací program je tomu českému velmi podobný, vznikl ale o trochu později. Porovnání těchto kurikulárních dokumentů  pro úroveň ISCED 1 a 2 provedl Berki \citeyearpar{berki2011}, nedostatečná specifikace vzdělávacího obsahu a absence práce s informatikou jako vědou a algoritmickým myšlením byly jeho  hlavní zjištění. \citep[s. 36]{berki2011} Obsah učiva informatiky je pro školy úrovně ISCED 1-3 rozdělen do pěti okruhů:
+\begin{itemize}
+\setlength\itemsep{0.01em}
+  	\item Informácie okolo nás
+	\item Komunikácia prostredníctvom IKT
+  	\item Postupy, riešenie problémov, algoritmické myslenie
+	\item Princípy fungovania IKT
+	\item Informačná spoločnosť
+\end{itemize}
+
+Algoritmizaci se věnuje okruh Postupy, riešenie problémov, algoritmické myslenie, ve kterém jsou dále definovány obsahové a výkonové standardy\footnote{Obsahovým standardem rozumíme obsah probíraného učiva, výkonovým standardem jsou výstupní kompetence absolventa}. Uvádím tabulku (\ref{table:2 }) pro úroveň ISCED3.
+% ***************************
+%Tabulka ŠVP  z roku 2011
+% ***************************
+{\renewcommand{\arraystretch}{1.4}% for the vertical padding
+\begin{table}[t]
+\hyphenpenalty=10
+\footnotesize
+\center
+\caption{Obsahový okruh \textit {Postupy, riešenie problémov, algoritmické myslenie } z ŠVP 2011} \label{table:2 }\todo{citace}
+\begin{tabular}{|l|l|}
+\hline
+\multicolumn{1}{|c|}{Výkonový štandard } & \multicolumn{1}{c|}{Obsahový štandard } \\\hline
+%Hľadanie a opravovanie chýb
+% **************
+\begin{minipage}[t]{0.45\textwidth}
+\begin{itemize}[leftmargin=*,nosep]
+  	\item Analyzovať problém, navrhnúť algoritmus riešenia problému, zapísať algoritmus v
+zrozumiteľnej formálnej podobe, overiť správnosť algoritmu.
+	\item Riešiť problémy pomocou algoritmov, vedieť ich zapísať do programovacieho jazyka,
+hľadať a opravovať chyby.
+\item Rozumieť hotovým programom, určiť vlastnosti vstupov, výstupov a vzťahy medzi
+nimi, vedieť ich testovať a modifikovať.
+
+\item Riešiť úlohy pomocou príkazov s rôznymi obmedzeniami pouţitia príkazov,
+premenných, typov a operácií.
+\item Používať základné typy používaného programovacieho jazyka
+\item Rozpoznať a odstrániť syntaktické chyby, opraviť chyby vzniknuté počas behu
+programu, identifikovať miesta programu, na ktorých môže dôjsť k chybám počas
+behu programu.
+
+\end{itemize}
+  \end{minipage} &
+  \begin{minipage}[t]{0.45\textwidth}
+\begin{itemize}[leftmargin=*,nosep]
+  	\item Problém. Algoritmus. Algoritmy z beţného života. Spôsoby zápisu algoritmov.
+	\item Etapy riešenia problému – rozbor problému, algoritmus, program, ladenie.
+\item Programovací jazyk -- syntax, spustenie programu, logické chyby, chyby počas behu
+programu. Pojmy – príkazy (priradenie, vstup, výstup), riadiace štruktúry (podmienené
+príkazy, cykly), premenné, typy , množina operácií.
+\end{itemize}
+ \end{minipage}
+
+\\\hline
+\end{tabular}
+\end{table}
+% ***************************
+%Tabulka ŠVP  z roku 2011  KONEC
+% ***************************
+ Slovenské deklarované kurikulum má tedy pro algoritmizaci vlastní okruh, ve kterém jsou je učivo i výstupní standardy rozepsány mnohem detailněji než v kurikulu českém. U programovacího jazyka jasně uvádí, které pojmy by měl žák znát. Stejně ale jako české RVP dává prostor k případné variaci, nedefinuje paradigma programovacího jazyka ani blíže nespecifikuje programovací jazyky. Jelikož je dodržena jednotná struktura napříč všemi stupni vzdělávání, můžeme snadno identifikovat posuny  v úrovni vzdělávání pro jednotlivá témata. \citep[s. 85]{berki2016}
+
+Slovensko ale v inovaci pokračovalo a v roce 2015 nasadilo Inovovaný štatný vzdělávací program, který všechny oblasti ještě dále specifikuje.   Uveďme nyní jako příklad opět  tabulku s obsahovými a výkonovými standarty předmětu informatika pro úroveň ISCED3 okruhu  Postupy, riešenie problémov, algoritmické myslenie pro 5.-8. ročník\footnote{Na rozdíl od dokumentu z roku 2011 je obsah vzdělávání rozdělen na dva celky, 1.-4. a 5.-8. ročník}:
+
+
+
+
+
+
+
+% ***************************
+%Tabulka štatných vzdělávacích programů 
+% ***************************
+%ČÁST 1
+% ***************************
+{\renewcommand{\arraystretch}{1.4}% for the vertical padding
+\begin{table}[t]
+\hyphenpenalty=10
+\footnotesize
+\center
+\caption{Obsahový okruh \textit {programování a vývoj aplikací}} \label{table:3}
+\begin{tabular}{|l|l|}
+\hline
+% první řádek
+\multicolumn{1}{|c|}{Výkonový štandard } & \multicolumn{1}{c|}{Obsahový štandard } \\\hline
+\multicolumn{2}{|c|}{Analýza problému}\\\hline
+% Analýza problému
+% **************
+  \begin{minipage}[t]{0.45\textwidth}
+Žiak vie/dokáže
+\begin{itemize}[leftmargin=*,nosep]
+  	\item identifikovať vstupné informácie zo zadania úlohy,
+	\item popísať očakávané výstupy, výsledky, akcie,
+	\item identifikovať problém, ktorý sa bude riešiť algoritmicky,
+	\item formulovať a neformálne (prirodzeným jazykom) vyjadriť ideu
+	riešenia,
+	\item uvažovať o vlastnostiach vykonávateľa (napr. korytnačka, grafické
+pero, robot, a pod.),
+	\item naplánovať riešenie úlohy ako postupnosť príkazov vetvenia
+a opakovania
+\end{itemize}
+  \end{minipage} &
+  \begin{minipage}[t]{0.45\textwidth}
+Vlastnosti a vzťahy: zadaný problém – vstup – výstup\\
+Procesy: rozdelenie problému na menšie časti, syntéza riešenia z riešení
+menších častí, identifikovanie opakujúcich sa vzorov, identifikovanie
+miest pre rozhodovanie sa (vetvenie a opakovanie), identifikovanie
+všeobecných vzťahov medzi informáciami
+    \begin{itemize}[leftmargin=*,nosep]
+  \item význam, prvky algoritmu  
+\end{itemize}
+  \end{minipage}\\\hline
+%Jazyk na zápis riešenia
+% **************
+\multicolumn{2}{|c|}{Jazyk na zápis riešenia}\\\hline
+  \begin{minipage}[t]{0.45\textwidth}
+\begin{itemize}[leftmargin=*,nosep]
+  	\item používať jazyk na zápis algoritmického riešenia problému (použiť
+konštrukcie jazyka, aplikovať pravidlá jazyka), 
+	\item rozpoznať a odstrániť chyby v zápise,
+	\item vytvárať zápisy a interpretovať zápisy podľa nových stanovených
+pravidiel (syntaxe) pre zápis algoritmov.
+\end{itemize}
+  \end{minipage} &
+  \begin{minipage}[t]{0.45\textwidth}
+Pojem: program, programovací jazyk
+Vlastnosti a vzťahy: zápis algoritmu a vykonanie programu, vstup –
+vykonanie programu – výstup/akcia
+Procesy: zostavenie programu, identifikovanie, hľadanie, opravovanie
+chýb
+  \end{minipage}\\\hline
+%Pomocou postupnosti príkazov
+% **************
+\multicolumn{2}{|c|}{Pomocou postupnosti príkazov}\\\hline
+\begin{minipage}[t]{0.45\textwidth}
+\begin{itemize}[leftmargin=*,nosep]
+  	\item riešiť problém skladaním príkazov do postupnosti,
+	\item aplikovať pravidlá, konštrukcie jazyka pre zostavenie postupnosti príkazov.
+\end{itemize}
+  \end{minipage} &
+  \begin{minipage}[t]{0.45\textwidth}
+Pojmy: príkaz, parameter príkazu, postupnosť príkazov
+Vlastnosti a vzťahy: ako súvisia príkazy a výsledok realizácie programu
+Procesy: zostavenie a úprava príkazov, vyhodnotenie postupnosti prí-
+kazov, úprava sekvencie príkazov (pridanie, odstránenie príkazu, zmena
+poradia príkazov)
+  \end{minipage}\\\hline
+%Pomocou nástrojov na interakciu
+% **************
+\multicolumn{2}{|c|}{Pomocou nástrojov na interakciu}\\\hline
+\begin{minipage}[t]{0.45\textwidth}
+\begin{itemize}[leftmargin=*,nosep]
+  	\item rozpoznávať situácie, kedy treba získať vstup,
+	\item identifikovať vlastnosti vstupnej informácie (obmedzenia, rozsah,
+formát),
+\item rozpoznávať situácie, kedy treba zobraziť výstup, realizovať akciu,
+
+\item zapisovať algoritmus, ktorý reaguje na vstup,
+\item vytvárať hypotézu, ako neznámy algoritmus spracováva zadaný
+vstup, ak sú dané páry vstup–výstup/akcia.
+
+\end{itemize}
+  \end{minipage} &
+  \begin{minipage}[t]{0.45\textwidth}
+Vlastnosti a vzťahy: prostriedky jazyka pre získanie vstupu, spracovanie
+vstupu a zobrazenie výstupu
+Procesy: čakanie na neznámy vstup – vykonanie akcie – výstup, ná-
+sledný efekt
+  \end{minipage}\\\hline
+\end{tabular}
+\end{table}
+
+
+%ČÁST 2
+% ***************************
+{\renewcommand{\arraystretch}{1.4}% for the vertical padding
+{\renewcommand{\arraystretch}{1.4}% for the vertical padding
+\begin{table}[t]
+\hyphenpenalty=10
+\footnotesize
+\center
+\begin{tabular}{|l|l|}
+\hline
+%Pomocou premenných
+% **************
+\multicolumn{2}{|c|}{Pomocou premenných}\\\hline
+\begin{minipage}[t]{0.45\textwidth}
+\begin{itemize}[leftmargin=*,nosep]
+  	\item identifikovať zo zadania úlohy, ktoré údaje musia byť zapamätané,
+resp. sa menia (a teda vyžadujú použitie premenných),
+
+	\item riešiť problémy, v ktorých si treba zapamätať a neskôr použiť
+zapamätané hodnoty vo výrazoch,
+\item zovšeobecňovať riešenie tak, aby fungovalo nielen s konštantami
+\end{itemize}
+  \end{minipage} &
+  \begin{minipage}[t]{0.45\textwidth}
+Pojmy: premenná, meno (pomenovanie) premennej, hodnota premennej,
+operácia (+, -, *, /)
+Vlastnosti a vzťahy: pravidlá jazyka pre použitie premennej, meno premennej
+– hodnota premennej
+Procesy: nastavenie hodnoty (priradenie), zistenie hodnoty (použitie
+premennej), zmena hodnoty premennej, vyhodnocovanie výrazu
+s premennými, číslami a operáciami
+  \end{minipage}\\\hline
+%Pomocou cyklov
+% **************
+\multicolumn{2}{|c|}{Pomocou cyklov}\\\hline
+\begin{minipage}[t]{0.45\textwidth}
+\begin{itemize}[leftmargin=*,nosep]
+  	\item rozpoznávať opakujúce sa vzory,
+	\item rozpoznávať, aká časť algoritmu sa má vykonať pred, počas aj po
+skončení cyklu,
+\item riešiť problémy, v ktorých treba výsledok získať akumulovaním
+čiastkových výsledkov v rámci cyklu
+\item riešiť problémy, ktoré vyžadujú neznámy počet opakovaní,
+\item riešiť problémy, v ktorých sa kombinujú cykly a vetvenia,
+\item stanovovať hranice a podmienky vykonávania cyklov.
+\end{itemize}
+  \end{minipage} &
+  \begin{minipage}[t]{0.45\textwidth}
+Pojmy: opakovanie, počet opakovaní, podmienka vykonávania cyklu,
+telo cyklu
+Vlastnosti a vzťahy: ako súvisí počet opakovaní s výsledkom, čo platí
+po skončení cyklu
+Procesy: vyhodnotenie hraníc/podmienky cyklu, vykonávanie cyklu
+  \end{minipage}\\\hline
+%Pomocou vetvenia
+% **************
+\multicolumn{2}{|c|}{Pomocou vetvenia}\\\hline
+\begin{minipage}[t]{0.45\textwidth}
+\begin{itemize}[leftmargin=*,nosep]
+  	\item rozpoznávať situácie a podmienky, kedy treba použiť vetvenie,
+	\item rozpoznávať, aká časť algoritmu sa má vykonať pred, v rámci
+a po skončení vetvenia
+\item riešiť problémy, ktoré vyžadujú vetvenie so zloženými podmienkami
+(s logickými spojkami),
+\item riešiť problémy, v ktorých sa kombinujú cykly a vetvenia.
+\end{itemize}
+  \end{minipage} &
+  \begin{minipage}[t]{0.45\textwidth}
+Pojmy: vetvenie, podmienka
+Vlastnosti a vzťahy: pravda/nepravda – splnená/nesplnená podmienka
+Procesy: zostavovanie a upravovanie vetvenia, vytvorenie podmienky
+a vyhodnotenie podmienky s negáciami a logickými spojkami (a, alebo)
+  \end{minipage}\\\hline
+%Interpretácia zápisu riešenia
+% **************
+\multicolumn{2}{|c|}{Interpretácia zápisu riešenia}\\\hline
+\begin{minipage}[t]{0.45\textwidth}
+\begin{itemize}[leftmargin=*,nosep]
+  	\item krokovať riešenie, simulovať činnosť vykonávateľa s postupnos-
+ťou príkazov, s výrazmi a premennými, s vetvením a s cyklami,
+	\item vyjadrovať ideu daného návodu (objavovať a vlastnými slovami
+popísať ideu zapísaného riešenia – ako program funguje, čo zápis
+realizuje pre rôzne vstupy),
+\item upraviť riešenie úlohy vzhľadom na rôzne dané obmedzenia,
+\item dopĺňať, dokončovať, modifikovať rozpracované riešenie,
+
+\item hľadať vzťah medzi vstupom, algoritmom a výsledkom,
+\item uvažovať o rôznych riešeniach, navrhovať vylepšenie.
+\end{itemize}
+  \end{minipage} &
+  \begin{minipage}[t]{0.45\textwidth}
+Vlastnosti a vzťahy: jazyk - vykonanie programu
+Procesy: krokovanie, čo sa deje v počítači v prípade chyby v programe
+ \end{minipage}
+\\\hline
+\end{tabular}
+\end{table}
+\clearpage
+%ČÁST 3
+% ***************************
+{\renewcommand{\arraystretch}{1.4}% for the vertical padding
+\begin{table}[t]
+\hyphenpenalty=10
+\footnotesize
+\center
+\begin{tabular}{|l|l|}
+\hline
+%Hľadanie a opravovanie chýb
+% **************
+\multicolumn{2}{|c|}{Hľadanie a opravovanie chýb}\\\hline
+\begin{minipage}[t]{0.45\textwidth}
+\begin{itemize}[leftmargin=*,nosep]
+  	\item rozpoznávať, že program pracuje nesprávne,
+	\item hľadať chybu vo vlastnom, nesprávne pracujúcom programe
+a opraviť ju,
+\item zisťovať, pre aké vstupy, v ktorých prípadoch, situáciách program
+zle pracuje,
+
+\item uvádzať kontra príklad, kedy niečo neplatí, nefunguje,
+\item posúdiť a overiť správnosť riešenia (svojho aj cudzieho),
+\item rozlišovať chybu pri realizácii od chyby v zápise.
+\end{itemize}
+  \end{minipage} &
+  \begin{minipage}[t]{0.45\textwidth}
+Vlastnosti a vzťahy: chyba v postupnosti príkazov (zlý príkaz, chýbajú-
+ci príkaz, vymenený príkaz alebo príkaz navyše), chyba vo výrazoch
+s premennými, chyba v algoritmoch s cyklami a s vetvením, chyba pri
+realizácii (logická chyba), chyba v zápise (syntaktická chyba)
+Procesy: rozpoznanie chyby, hľadanie chyby
+ \end{minipage}
+
+\\\hline
+\end{tabular}
+
+
+\end{table}
+% ***************************
+%Tabulka štatných vzdělávacích programů  KONEC
+% ***************************
+Výhodou je, že toto dělení je zachováno pro všechny stupňe vzdělávání, snandno se identifikuje posun žáků v jejich znalostech a dovednostech jak píše Berki \citeyearpar[s. 85]{berki2016}, který uvádí i tabulku posunu pro jednotlivé celky napříč celky. Pro náš celek Algoritmické řešení problému je zajímavé také to, že úzce kopíruje samotný algoritmus vývoje softwaru, můžeme ho tedy zobrazit v přehledném diagramu(\ref{picture1}), barevně jsou označené bloky společné pro všechny úrovně vzdělávání: 
+
+% ***************************
+%TIKZ návaznost slovenských okruhů
+% ***************************
+\begin{figure}[h!]
+\tikzset{every picture/.append style={font=\fontsize{9}{12}\selectfont}}
+
+\begin{tikzpicture}[node distance=2cm]
+ \node (start) [startstop] {analýza problému};
+  \node (m2) [io,right of=start,xshift=0.8cm] {jazyk na zápis řešení};
+  \node (m3) [io,right of=m2,xshift=0.8cm] {řešení problému pomocí:};
+\node (v1) [decision,below of=m3,xshift=3cm,yshift=-1cm] {proměných};
+\node (v2) [decision,below of=m3,yshift=-1cm] {větvení};
+\node (v3) [decision,below of=m3,xshift=-3cm,yshift=-1cm] {cyklů};
+\node (v4) [io,below of=m3,xshift=-6cm,yshift=-1cm] {posloupnosti příkazů};
+\node (v5) [decision,below of=m3,xshift=6cm,yshift=-1cm] {interakčních nástrojů};
+  \node (m4) [io,right of=m3,xshift=0.8cm] {interpretace a~zápis řešení};
+  \node (m5) [io,right of=m4,xshift=0.8cm] {hledání a~opravování chyb};
+\draw [arrow] (start) -- (m2);
+\draw [arrow] (m2) -- (m3);
+\draw [arrow] (m3) -- (m4);
+\draw [arrow] (m4) -- (m5);
+\draw [arrow2] (m3) -- (v1);
+\draw [arrow2] (m3) -- (v2);
+\draw [arrow2] (m3) -- (v3);
+\draw [arrow2] (m3) -- (v4);
+\draw [arrow2] (m3) -- (v5);
+  \end{tikzpicture}
+\caption{Obsahový okruh \textit {programování a vývoj aplikací}} \label{picture1}
+\end{figure}
+
+Slovenské dekralované kurikulum podobně jako to české nespecifikuje konkrétní programovou výbavu nebo programovací paradigma. Na rozdíl od něj ale spefikuje a rozděluje obsah vzdělávání do přehledných a smysluplných kategorií, úroveň dosaženého vzdělání je tím lépe ověřitelná.
+ 
+Pokud budeme předpokládat, že jedním z determinantů pregraduální přípravy jsou i deklarované kurikulum na národní úrovni, slovenská verze kurikula má se svoji specifikovanější podobou výhodu. Tím, že slovenské kurikulum vymezilo pro algoritmizaci a programování vlastní okruh, dává tomuto tématu vysokou důležitost a bere ho jeho nedílnou součást výuky informatiky na základních a středních školách. 
+
+\section{Má smysl učit programování?}
+\section{Jaké jsou koncepty výuky programování?}
+\section{Jak se u nás programování učí?}
+\chapter{Kurikulární výzkum}
+\section{Stav problematiky}
+\chapter{Textová analýza}
+\section{Popis vzorku}
+\section{Popis způsobu analýzy}
+\section{Výsledky}
+\chapter{Návrh konceptu pregraduální přípravy}
+\section{ZŠ}
+\section{SŠ}
+\chapter{Závěr}
+\textcolor{gray}{\Blindtext}
+
+
+\bibliography{citace}
+
+\listoftables
+
+%\begin{quote}
+%l,,Programming a computer means nothing more or less than communicating to it in a language
+%that it and the human user can both understand. ``\citep{Češka1994}
+%\end{quote}
+%\chapquote{,,Programming a computer means nothing more or less than \mbox{communicating} to it in a language
+%that it and the human user can both understand. ``}{Lewis Carroll}{Alice in Wonderland}
+\end{document}

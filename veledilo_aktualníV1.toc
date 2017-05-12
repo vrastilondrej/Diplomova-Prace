@@ -1,0 +1,21 @@
+\select@language {czech}
+\contentsline {chapter}{\numberline {1}Úvod}{8}{chapter.1}
+\contentsline {chapter}{\numberline {2}Programování}{10}{chapter.2}
+\contentsline {section}{\numberline {2.1}Algoritmus a programování -- odborné definice a\nobreakspace {}vztahy}{10}{section.2.1}
+\contentsline {section}{\numberline {2.2}Vztah algoritmizace a programování}{11}{section.2.2}
+\contentsline {section}{\numberline {2.3}Programovací paradigmata}{12}{section.2.3}
+\contentsline {section}{\numberline {2.4}Programování z pohledu deklarovaného kurikula ZŠ a SŠ}{14}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Deklarované kurikulum výuky informatiky na Slovensku}{16}{subsection.2.4.1}
+\contentsline {section}{\numberline {2.5}Proč učit programováníí?}{21}{section.2.5}
+\contentsline {section}{\numberline {2.6}Jak učit programování?}{22}{section.2.6}
+\contentsline {chapter}{\numberline {3}Analýza deklarovaného kurikula pregraduální přípravy}{25}{chapter.3}
+\contentsline {section}{\numberline {3.1}Stav problematiky}{25}{section.3.1}
+\contentsline {section}{\numberline {3.2}pregradualní příprava učitelů informatiky-popis zkoumaného vzorku}{25}{section.3.2}
+\contentsline {chapter}{\numberline {4}Textová analýza}{28}{chapter.4}
+\contentsline {section}{\numberline {4.1}Popis vzorku}{28}{section.4.1}
+\contentsline {section}{\numberline {4.2}Popis způsobu analýzy}{28}{section.4.2}
+\contentsline {section}{\numberline {4.3}Výsledky}{28}{section.4.3}
+\contentsline {chapter}{\numberline {5}Návrh konceptu pregraduální přípravy}{29}{chapter.5}
+\contentsline {section}{\numberline {5.1}ZŠ}{29}{section.5.1}
+\contentsline {section}{\numberline {5.2}SŠ}{29}{section.5.2}
+\contentsline {chapter}{\numberline {6}Závěr}{30}{chapter.6}

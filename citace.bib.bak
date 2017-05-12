@@ -1,0 +1,152 @@
+% Encoding: UTF-8
+
+@Online{rvpgy,
+  author       = {MŠMT},
+  title        = {Rámcový vzdělávací program pro gzmn8yia},
+  year         = {2007},
+  url          = {\url{http://www.nuv.cz/file/159_1_1/}},
+  organization = {Výzkumný ústav pedagogický v Praze},
+  cited        = {19.~10.~2005},
+  location     = {Praha},
+  pagetotal    = {164},
+}
+
+@Online{rvpzv,
+  author    = {MŠMT},
+  title     = {Rámcový vzdělávací program pro základní vzdělávání},
+  year      = {2016},
+  url       = {\url{http://www.nuv.cz/uploads/RVP_ZV_2016.pdf}},
+  location  = {Praha},
+  optcited  = {19.~10.~2005},
+  pagetotal = {164},
+}
+
+@InProceedings{berki2011,
+  author    = {Jan Berki},
+  title     = {ICT in the Czech and Slovak National Curriculum},
+  booktitle = {Proceedings of 5th Internaitonal Conference ISSEP},
+  year      = {2011},
+  publisher = {Association of the Infovek Project and Faculty of Mathematics, Physics and Informatics, Comenius University, Bratislava.},
+  isbn      = {978-80-89189-90-7},
+  journal   = {Proceedings of 5th Internaitonal Conference ISSEP},
+}
+
+@Thesis{berki2016,
+  author      = {Jan Berki},
+  title       = {Projektované, realizované a dosažené ICT kurikulum na základních školách},
+  type        = {phdthesis},
+  institution = {ahoj},
+  year        = {2016},
+  subtitle    = {Plzeň. Diplomová práce. Západočeská univerzita v Plzni. Fakulta filozofická.},
+  note        = {Plzeň. Disertační práce. Jihočeská univerzita v Českých Budějovicích. Pedagogická fakulta. Katedra informatiky. Školitel doc. PhDr. Alena Hošpesová, Ph.D.},
+}
+
+@Book{didaktikderinformatik,
+  author    = {Schubert, Sigrid and Schwill, Andreas},
+  title     = {Didaktik der Informatik},
+  year      = {2011},
+  date      = {2011-04-11},
+  publisher = {Spektrum-Akademischer Vlg},
+  isbn      = {978-3-8274-2652-9},
+  ean       = {9783827426529},
+}
+
+@Book{algunlocked,
+  author    = {Cormen, Thomas H.},
+  title     = {Algorithms Unlocked},
+  year      = {2013},
+  date      = {2013-03-26},
+  publisher = {MIT University Press Group Ltd},
+  isbn      = {978-0-262-51880-2},
+  pagetotal = {240},
+  ean       = {9780262518802},
+}
+
+@Book{algdesignman,
+  author    = {Steve Skiena},
+  title     = {The Algorithm Design Manual},
+  year      = {2008},
+  date      = {2008-08-21},
+  publisher = {Springer London Ltd},
+  isbn      = {978-1848000698},
+  pagetotal = {746},
+  ean       = {9781848000698},
+}
+
+@Book{intralg,
+  author    = {Cormen, Thomas H. and Leiserson, Charles E. and Rivest, Ronald L. and Stein, Clifford},
+  title     = {Introduction to Algorithms},
+  year      = {2009},
+  date      = {2009-09-11},
+  publisher = {The MIT Press},
+  isbn      = {978-0-262-03384-8},
+  ean       = {9780262033848},
+}
+
+@Book{knuth,
+  author    = {Knuth, Donald Ervin},
+  title     = {Umění programování. 1. díl: Základní algoritmy},
+  year      = {2008},
+  publisher = {Computer Press},
+  isbn      = {978-80-251-2025-5},
+  pagetotal = {672},
+}
+
+@Book{spirit,
+  author    = {David Harel and Yishai Feldman},
+  title     = {Algorithmics: The Spirit of Computing (3rd Edition)},
+  year      = {2004},
+  publisher = {Addison-Wesley},
+  isbn      = {0-321-11784-0},
+}
+
+@Book{motycka,
+  author = {Arnošt Motyčka},
+  title  = {Algoritmizace},
+  year   = {1999},
+  note   = {Brno: Konvoj},
+  isbn   = {80-85615-80-0},
+}
+
+@Book{introtocomputing,
+  author    = {David Evans},
+  title     = {Introduction to Computing: Explorations in Language, Logic, and Machines},
+  year      = {2011},
+  publisher = {CreateSpace Independent Publishing Platform},
+  isbn      = {978-1463687472},
+}
+
+@Article{bolshakova,
+  author  = {Elena Bolshakova},
+  title   = {Programming paradigms in computer science educaion},
+  journal = {International journal information theories},
+  year    = {2005},
+  issn    = {1310-0513},
+  url     = {http://www.foibg.com/ijita/vol12/ijita12-3-p13.pdf},
+}
+
+@WWW{skavrda,
+  author = {Libor Škavrda},
+  title  = {Co je to funkcionální programování},
+  year   = {2006},
+  note   = {\url{http://programujte.com/clanek/ 2006032503-co-je-to-funkcionalni-programovani/}},
+}
+
+@InCollection{nastartu,
+  author       = {Miroslava Černochová and Jiří Vaníček},
+  title        = {Didaktika informatiky na startu},
+  booktitle    = {Oborové didaktiky : vývoj – stav – perspektivy},
+  year         = {2015},
+  editor       = {Stuchlíková, Iva and Janík, Tomáš and Beneš, Zdeněk and Bílek, Martin and Brücknerová, Karla and Černochová, Miroslava and Čížková, Věra and Čtrnáctová, Hana and Dvořák, Leoš and Dytrtová, Kateřina and Gracová, Blažena and Hník, Ondřej and Kekule, Martina and Kostková, Klára and Kubiatko, Milan and Nedělka, Michal and Novotná, Jarmila and Papáček, Miroslav and Petr, Jan and Píšová, Michaela and Řezníčková, Dana and Slavík, Jan and Staněk, Antonín and Šmejkalová, Martina and Tichá, Marie and Valenta, Josef and Vaníček, Jiří and Vondrová, Naďa and Závodská, Radka and Žák, Vojtěch and Čížková, Věra},
+  maintitle    = {asdsadasd},
+  note         = {1. vydání. Brno: Masarykova univerzita. S. 159–188},
+  publisher    = {Masarykova univerzita},
+  location     = {Brno},
+  isbn         = {978-80-210-7769-0},
+  address      = {Brno},
+  bookauthor   = {Iva Stuchlíková},
+  howpublished = {tištěná verze "print"},
+  keywords     = {field didactics, teaching, learning, teaching profession, content transformation},
+}
+
+@Comment{jabref-meta: databaseType:biblatex;}

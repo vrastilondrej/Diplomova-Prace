@@ -1,0 +1,56 @@
+\documentclass{minimal}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{polyglossia}
+\setdefaultlanguage{czech}
+\hyphenpenalty=10000
+\hbadness=10000
+
+
+\begin{comment}
+:Title: Assignment structure
+
+The structure of an assignment illustrated using a flow chart. Labels are in Danish.
+
+\end{comment}
+\usetikzlibrary{calc,trees,positioning,arrows,chains,shapes.geometric,%
+    decorations.pathreplacing,decorations.pathmorphing,shapes,%
+    matrix,shapes.symbols}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=1cm, minimum height=1cm,text centered, draw=black,text width=2cm,fill=orange!20]
+\tikzstyle{io} = [rectangle, rounded corners, minimum width=1cm, minimum height=1cm,text centered, draw=black,text width=2cm,fill=orange!20]
+\tikzstyle{process} = [rectangle, minimum width=1cm, minimum height=0.8cm, text centered, draw=black, fill=orange!30,text width=2.5cm]
+\tikzstyle{decision} = [rectangle, rounded corners, minimum width=1cm, minimum height=0.8cm,text centered, draw=black,text width=2cm]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{arrow2} = [thick,-,>=stealth]
+
+
+
+\begin{document}
+\tikzset{every picture/.append style={font=\fontsize{9}{12}\selectfont}}
+
+\begin{tikzpicture}[node distance=2cm]
+ \node (start) [startstop] {analýza problému};
+  \node (m2) [io,right of=start,xshift=0.8cm] {jazyk na zápis řešení};
+  \node (m3) [io,right of=m2,xshift=0.8cm] {řešení problému pomocí:};
+\node (v1) [decision,below of=m3,xshift=3cm,yshift=-1cm] {proměných};
+\node (v2) [decision,below of=m3,yshift=-1cm] {větvení};
+\node (v3) [decision,below of=m3,xshift=-3cm,yshift=-1cm] {cyklů};
+\node (v4) [io,below of=m3,xshift=-6cm,yshift=-1cm] {posloupnosti příkazů};
+\node (v5) [decision,below of=m3,xshift=6cm,yshift=-1cm] {interakčních nástrojů};
+  \node (m4) [io,right of=m3,xshift=0.8cm] {hledání a~opravování chyb};
+  \node (m5) [io,right of=m4,xshift=0.8cm] {interpretace a~zápis řešení};
+\draw [arrow] (start) -- (m2);
+\draw [arrow] (m2) -- (m3);
+\draw [arrow] (m3) -- (m4);
+\draw [arrow] (m4) -- (m5);
+\draw [arrow2] (m3) -- (v1);
+\draw [arrow2] (m3) -- (v2);
+\draw [arrow2] (m3) -- (v3);
+\draw [arrow2] (m3) -- (v4);
+\draw [arrow2] (m3) -- (v5);
+  \end{tikzpicture}
+\end{document}
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
