@@ -177,4 +177,107 @@
   url    = {http://ucime-informatiku.blogspot.co.id/2015/10/povinne-programovani-od-prvni-tridy.html},
 }
 
+@Book{england2013,
+  author = {{Department for Education}},
+  title  = {The National Curriculum in England: Key Stages 1 and 2 framework document.},
+  year   = {2013},
+  note   = {Available at: \url{https://www.gov.uk/government/publications/ national-curriculum-in-england-primary-curriculum} (Accessed: 6 December 2016).},
+}
+
+@Book{mindstorms,
+  author    = {Seymour A. Papert},
+  title     = {Mindstorms: Children, Computers, And Powerful Ideas},
+  year      = {1993},
+  publisher = {Imprint unknown},
+  isbn      = {0786723882},
+}
+
+@InProceedings{mannila,
+  author    = {Mannila, Linda and de Raadt, Michael},
+  title     = {An Objective Comparison of Languages for Teaching Introductory Programming},
+  booktitle = {Proceedings of the 6th Baltic Sea Conference on Computing Education Research: Koli Calling 2006},
+  year      = {2006},
+  series    = {Baltic Sea '06},
+  publisher = {ACM},
+  location  = {Uppsala, Sweden},
+  pages     = {32--37},
+  doi       = {10.1145/1315803.1315811},
+  url       = {http://doi.acm.org/10.1145/1315803.1315811},
+  acmid     = {1315811},
+  address   = {New York, NY, USA},
+  keywords  = {industry, programming languages, teaching},
+  numpages  = {6},
+}
+
+@Misc{guo_2014,
+  author  = {Guo, Philip},
+  title   = {Python is Now the Most Popular Introductory Teaching Language at Top U.S. Universities},
+  year    = {2014},
+  month   = {Jul},
+  url     = {http://cacm.acm.org/blogs/blog-cacm/176450-python-is-now-the-most-popular-introductory-teaching-language-at-top-u-s-universities},
+  journal = {ACM},
+}
+
+@InProceedings{hajek2015,
+  author    = {Hájek, Zdeněk. and Vasaráb Peter},
+  title     = {Skúsenosti s programovaním na základnej škole},
+  booktitle = {Didinfo 2015},
+  year      = {2015},
+  journal   = {Didinfo 2015},
+}
+
+@Book{javamanual,
+  author    = {Gosling, James and Joy, Bill and Steele, Guy L. and Bracha, Gilad and Buckley, Alex},
+  title     = {The Java Language Specification, Java SE 8 Edition},
+  year      = {2014},
+  edition   = {1st},
+  publisher = {Addison-Wesley Professional},
+  isbn      = {013390069X, 9780133900699},
+}
+
+@Misc{bluej,
+  author = {Rudolf Pecinovský},
+  title  = {BlueJ – vývojové prostředí pro výuku jazyka Java},
+  year   = {2004},
+}
+
+@Misc{greenfoot,
+  author  = {ahoj neco},
+  title   = {About Greenfoot:},
+  url     = {https://www.greenfoot.org/overview},
+  journal = {Greenfoot | About Greenfoot},
+}
+
+@Article{scratch,
+  author   = {MUSILEK, Michal},
+  title    = {PROJECT SCRATCH},
+  journal  = {JTIE},
+  year     = {2013},
+  volume   = {5},
+  number   = {1},
+  pages    = {102--106},
+  issn     = {1803537X},
+  doi      = {10.5507/jtie.2013.015},
+  url      = {http://jtie.upol.cz/artkey/jti-201301-0015.php},
+  abstract = {The paper focuses on a children's programming language named SCRATCH and community project with the same name. It evaluates not only its unique strengths, but also indicates some reserves. The paper presents several examples which explain how to work with an integrated development environment and create the program composited from the prepared command blocks. This is similar to work with a quality building kit. The attention is aimed at work with graphic elements ``sprites'' and intuitive multi-threaded programming, in which individual scripts communicate with each other via messaging.},
+  keywords = {programming; algorithms; project; children's programming language; structogram; community site; social network},
+}
+
+@Book{scheme,
+  author = {Skoupil, David},
+  title  = {PROGRAMY A PROJEKTY V JAZYKU SCHEME I},
+  year   = {2007},
+}
+
+@InProceedings{lessner2013,
+  author    = {Lessner, Daniel},
+  title     = {Výuka efektivity algoritmů na gymnáziích},
+  booktitle = {Journal of Technology and Information Education},
+  year      = {2013},
+  volume    = {1},
+  issn      = {1803-537X},
+  journal   = {Journal of Technology and Information Education},
+  keywords  = {Czech universities},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}
