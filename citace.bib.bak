@@ -137,9 +137,7 @@
   title        = {Didaktika informatiky na startu},
   booktitle    = {Oborové didaktiky : vývoj – stav – perspektivy},
   year         = {2015},
-  editor       = {Stuchlíková, Iva and Janík, Tomáš and Beneš, Zdeněk and Bílek, Martin and Brücknerová, Karla and Černochová, Miroslava and Čížková, Věra and Čtrnáctová, Hana and Dvořák, Leoš and Dytrtová, Kateřina and Gracová, Blažena and Hník, Ondřej and Kekule, Martina and Kostková, Klára and Kubiatko, Milan and Nedělka, Michal and Novotná, Jarmila and Papáček, Miroslav and Petr, Jan and Píšová, Michaela and Řezníčková, Dana and Slavík, Jan and Staněk, Antonín and Šmejkalová, Martina and Tichá, Marie and Valenta, Josef and Vaníček, Jiří and Vondrová, Naďa and Závodská, Radka and Žák, Vojtěch and Čížková, Věra},
   maintitle    = {asdsadasd},
-  note         = {1. vydání. Brno: Masarykova univerzita. S. 159–188},
   publisher    = {Masarykova univerzita},
   location     = {Brno},
   isbn         = {978-80-210-7769-0},
@@ -147,6 +145,36 @@
   bookauthor   = {Iva Stuchlíková},
   howpublished = {tištěná verze "print"},
   keywords     = {field didactics, teaching, learning, teaching profession, content transformation},
+}
+
+@InProceedings{berki2013,
+  author         = {Berki, Jan},
+  title          = {Study programs of training teachers of informatics in the Czech republic},
+  booktitle      = {Journal of Technology and Information Education},
+  year           = {2013},
+  language       = {eng},
+  volume         = {5},
+  url            = {\url{http://www.jtie.upol.cz/clanky_1_2013/JTIE-1-2013.pdf}},
+  article_number = {1},
+  issn           = {1803-6805},
+  journal        = {Journal of Technology and Information Education},
+  keywords       = {Czech universities},
+}
+
+@InProceedings{fojtik2015,
+  author    = {Rostislav Fojtík},
+  title     = {Vzdělávání budoucích učitelů informatiky},
+  booktitle = {Didinfo 2015},
+  year      = {2015},
+  journal   = {Didinfo 2015},
+}
+
+@Online{lessner2015,
+  author = {Dan Lessner},
+  editor = {Dan Lessner},
+  title  = {Povinné programování od první třídy — zamkněte děti doma!},
+  year   = {2015},
+  url    = {http://ucime-informatiku.blogspot.co.id/2015/10/povinne-programovani-od-prvni-tridy.html},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}
