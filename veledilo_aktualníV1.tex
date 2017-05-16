@@ -117,7 +117,7 @@ Jak si naše vysoké školy vedou ve výuce programování a algoritmizace? Nás
 Pokud máme zkoumat pregradualní přípravu učitelů informatiky v oblasti programování, měli bychom odpovědět na důležitou otázku -- Proč se vlastně zařazuje výuka programování do přípravy budoucích učitelů informatiky? Jaký zde má smysl? Definujeme nejdřív co je algoritmizace a programování, jak jsou tato témata zakotvena v našich kurikulárních dokumentech a nakonec odpovíme na dvě důležité otázky: Proč by vlastně mělo být součástí pregraduální přípravy budoucích učitelů informatiky na VŠ a jakým způsobem může být vyučováno.
 % podkapitola  Algoritmus a programování -- odborné definice a vztahy
 % **********************
-\section{Algoritmus a programování -- odborné definice a~vztahy}
+\section{Algoritmus a algoritmizace -- definice pojmů}
 \ahoj{,,Before there were computers, there were algorithms.~But now that there are computers,
 there are even more algorithms, and algorithms lie at the heart of computing. ``}{Introduction to Algorithms}
 
@@ -134,15 +134,15 @@ Podle Knutha \citeyearpar[s.~4-6]{knuth} musí algoritmus splňovat několik zá
 
 Často najdeme přirovnání algoritmu ke kuchařskému receptu jako například u~Knutha \citeyearpar[s.~6]{knuth} nebo u Harela a Feldmana  \citeyearpar[s.~4]{spirit}. Vstupem jsou pak v tomto případě suroviny, výstupem je hotové jídlo. Recept je konečný, naše vaření nebude probíhat nekonečně dlouho a efektivní -- můžeme je provést v~relativně krátkém čase.
 
-Jak je z definic výše patrné, pojemy algoritmus a algoritmizace jsou sice pro informatiku zcela zásadní, ale můžeme říci, že ji i přesahují, protože algoritmem můžeme popsat například proces vaření. Využití algoritmů je 
-
  Proces převodu problému na jednotlivé kroky nazýváme \textbf{algoritmizace}.\citep*[s.~67]{didaktikderinformatik} Motyčka  chápe algoritmizaci problému při tvorbě programu jako  vyváření postupu řešení daného problému na počítači, dále jako \textit {krásnou tvůrči činnost, při které využíváme intelekt, zkušenosti, intuici a postupně vytváříme spoustu postupů řešení, z nichž ty počáteční zpravidla k cíli nevedou vůbec, další vedou k ~cíli pouze občas a havárie již jen v určitých zvláštních (mezních) situacích, o kterých jsme na počátku našeho snažení vůbec neuvažovali} \citeyearpar[s.~5]{motycka}.
+
+\textcolor{red}{Jak je z definic výše patrné, pojemy algoritmus a algoritmizace jsou sice pro informatiku zcela zásadní, ale můžeme říci, že ji i přesahují, protože algoritmem můžeme popsat například proces vaření. Pro potřeby této práce je potřeba správně rozhodnout, které předměty v průběhu pregraduální přípravy pomáhají studentovi v rozvíjení jeho schopnosti algoritmizace problémů, protože to v sylabech těchto předmětů nemusí být explicitně zmíněno.\footnote{stejně tak, jako když se při výuce vaření na ZŠ o algoritmizaci nezmiňujeme, ačkoliv to algoritmizace vlastně je.}.  }
 
 
 
 % podkapitola  Vztah algoritmizace a programování
 % **********************
-\section{Vztah algoritmizace a programování}
+\section{Programování a jeho vztah k algoritmizaci}
 Pokud jsme si definovali algoritmus obecně, musíme definovat i propojení tohoto pojmu s počítači -- stroji. Počítače v současné době k řešení mnoha problémů okolo nás, např. automatickému pilotování letadla, nebo složitým simulacím chemických procesů.  \citep[s.~49]{spirit}. Vše jsou složité algoritmy vykonávané počítačem. Aby počítač mohl provést příkaz, je algoritmus zapsán v~\textbf{ programovacím jazyku}, umělém jazyku, který je zpravidla zredukovanou podmonžinou anglického jazyka. Programem pak rozumíme záps algoritmu v programovacím jazyku \citep[s.~6]{motycka}. V současné době existuje mnoho jazyků lišících se syntaxí a použitím. Jazyky se líší mírou abstrakce -- vyšší jazyky se podobají lidské řečí, jsou více abstraktní, naopak pomcí nižších jazyků je možné lépe ovládat strojové operace, mají nižší abstrakci.  Schéma (\ref{provedeni}) popisuje celý princip od myšlenky algorithmu až po jeho provedení počítačem. Programátor -- člověk naprogramuje algoritmus do programu  v některém z vyšších jazyků. Poté si počítač převádí, tzv. kompiluje tento program do nižšího jazyku, tzv. jazyku symbolických adres (anglicky assembly language). Tento jazyk už přímo odkazuje na místa v počítačové paměti. Následně už je program převeden do strojového kódu, jehož instrukcím rozumí procesor a je schopen je provést. Alternativa ke kompilaci je převod pomocí interpretru. Na rozdíl od kompilace dokáže interpretr provést program aniž by byl převeden do strojového kódu \citep[s.~54-57]{spirit}
 
 \begin{figure}
@@ -173,9 +173,8 @@ V jistém smyslu můžeme na informatiku nahlížet jako na vědu, která se zab
 
 \textbf{Imperativní paradigma} se vyvinulo z nižších jazyků -- strojového a jazyku symbolických adres \citep*[s.~286]{bolshakova}. Z pohledu toho paradigmatu je počítač soubor paměťových buněk organizovaných  do ruzných typů datových struktur, jako pole nebo seznam.  Program je v tomto paradigmatu je sekvence přesných příkazů, která mění data v těchto strukturách a které jsou spuštěny v přesném sledu. Jelikož program pracuje se stále stejným paměťovým místem, ke kterému uživatel přistupuje pomocí tzv. proměnných, měl by mít programátor v každém kroku programu přehled, jak se tyto hodnoty mění. 
 
-
-Ve \textbf{Funkcionálním paradigmat}
-je programem výraz, který se skládá z funkcí s podobnou strukturou jako mají funkce matematické. Jedna funkce může být argumentem jiné funkce. Po spuštění proběhne zjednodušení tohoto výrazu až do podoby, kdy zjednodušit dále nelze.  není zde principmpodifikovatelné paměti jako v imperativním paradigmatu \citep*{skavrda}.
+Ve \textbf{Funkcionálním paradigmatu}
+je programem výraz, který se skládá z funkcí s podobnou strukturou jako mají funkce matematické. Jedna funkce může být argumentem jiné funkce. Po spuštění proběhne zjednodušení tohoto výrazu až do podoby, kdy zjednodušit dále nelze.  není zde princip modifikovatelné paměti jako v imperativním paradigmatu \citep*{skavrda}. 
 
 V \textbf{logickém paradigmatu} je program brán jako soubor logických formulí -- axiomů, které popisují vztahy a vlastnosti nějakých objektů a dotaz, který má být na základě těchto pravidel zdpovězen -- dokázán. 
 
@@ -196,7 +195,24 @@ Přehlednou tabulku paradigmat uvádí Bolshakova \citeyearpar[s.~287]{bolshakov
     \end{tabular}
 \end{table}
 
+Pro úplnost uveďme ještě tabulku, s přehledem programovacích jazyků pro příslušná paradigmata.
+
+\begin{table}[ht]
+\hyphenpenalty=10000
+\footnotesize
+\center
+    \begin{tabular}{L{2cm} L{4cm}}
+   \specialrule{.15em}{.05em}{.05em}  \textbf{Paradigma}              & \textbf{Klíčový koncept} \\ \specialrule{.15em}{.05em}{.05em} 
+    Imperativní           & C, C++, Java, PHP, Python, Ruby\\ \hline
+    Funkcionální          & Python, Lisp, Scheme\\ \hline
+    Logické               & Prolog  \\ \hline
+    Objektově orientované & C++, Java, Python\\ \specialrule{.15em}{.05em}{.05em} 
+    \end{tabular}
+\end{table}
+
 Programovací jazyk nemusí podporovat pouze jedno paradigma, takovým jazykům pak říkamé \textbf{multiparadigmatické}.
+
+
 
 
 
