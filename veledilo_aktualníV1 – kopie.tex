@@ -1,0 +1,182 @@
+\documentclass[FP,DP]{tulthesis}
+%\hypersetup{
+  %  hidelinks = true,
+%}
+%\usepackage{hyperref}
+\usepackage{blindtext}
+\usepackage{url}
+\usepackage[obeyFinal]{easy-todo}
+\usepackage{polyglossia}
+\usepackage{enumitem}
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{svg}
+\usepackage{fancyvrb}
+\usepackage{tabularx}
+
+\def\UrlBreaks{\do\/\do-}
+
+\setdefaultlanguage{czech}
+
+% bibliografie
+\newcommand*{\biber}{\sty{biber}\xspace}
+\newcommand*{\biblatex}{\sty{biblatex}\xspace}
+
+\usepackage[
+   backend=biber
+  ,bibstyle=iso-authoryear
+  ,citestyle=authoryear
+  ,autolang=other
+  ,pagetotal=true
+  ,sortlocale=cs_CZ
+  ,bibencoding=UTF8
+  ,spacecolon=false
+  %,block=ragged
+]{biblatex}
+
+\addbibresource{mybib.bib}
+%\setcitestyle{round,aysep={},yysep={;},aysep={,}}
+
+
+
+% fonty
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+%\setmainfont[Mapping=tex-text,BoldFont={* Bold},Numbers=OldStyle]{Baskerville 10 Pro}
+%\setsansfont[Mapping=tex-text,BoldFont={* Bold},Numbers=OldStyle]{Myriad Pro}
+%\setmonofont[Scale=MatchLowercase]{Vida Mono 32 Pro} ah
+
+%TIKZ
+\usetikzlibrary{calc,trees,positioning,arrows,chains,shapes.geometric,%
+    decorations.pathreplacing,decorations.pathmorphing,shapes,%
+    matrix,shapes.symbols}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=1cm, minimum height=1cm,text centered, draw=black,text width=2cm,fill=orange!20]
+\tikzstyle{io} = [rectangle, rounded corners, minimum width=1cm, minimum height=1cm,text centered, draw=black,text width=2cm,fill=orange!20]
+\tikzstyle{process} = [rectangle, minimum width=1cm, minimum height=0.8cm, text centered, draw=black, fill=orange!30,text width=2.5cm]
+\tikzstyle{decision} = [rectangle, rounded corners, minimum width=1cm, minimum height=0.8cm,text centered, draw=black,text width=2cm]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{arrow2} = [thick,-,>=stealth]
+
+% příkazy specifické pro tento dokument
+\newcommand{\argument}[1]{{\ttfamily\color{\tulcolor}#1}}
+\newcommand{\prikaz}[1]{\argument{\textbackslash #1}}
+\newenvironment{myquote}{\begin{list}{}{\setlength\leftmargin\parindent}\item[]}{\end{list}}
+\newenvironment{listing}{\begin{myquote}\color{\tulcolor}}{\end{myquote}}
+\sloppy
+
+% deklarace pro titulní stránku
+\TULtitle{Programování v pregraduální přípravě učitelů informatiky[verze 16. 5.] }{Programming in undergraduate training of CS teachers}
+\TULprogramme{N1101}{Matematika}{Mathematics}
+\TULbranch{7504T077}{Učitelství informatiky pro střední školy}{Teacher training for lower and upper-secondary school, Informatics}
+\TULbranch{7504T089}{Učitelství matematiky pro střední školy}{Teacher Training for Upper Secondary Schools, Mathematics}
+\TULauthor{Bc. Ondřej Vraštil}
+\TULsupervisor{Mgr. Jan Berki, Ph.D.}
+\TULyear{2016}
+
+
+% příkazy
+\newcommand{\verze}{1.3}
+\newcommand{\chapquote}[3]{\begin{quotation} \textit{#1} \end{quotation} \begin{flushright} - #2, \textit{#3}\end{flushright} }
+
+\newcommand{\ahoj}[2]{\begin{quotation} \textit{#1} \end{quotation} \begin{flushright} - \textit{#2}\end{flushright} }
+
+
+
+\usepackage{booktabs}
+
+\begin{document}
+
+\ThesisStart{male}
+
+\begin{abstractCZ}
+Tato zpráva popisuje třídu \texttt{tulthesis} pro sazbu absolventských prací
+Technické univerzity v~Liberci pomocí typografického systému \LaTeX.
+\end{abstractCZ}
+
+\vspace{2cm}
+
+\begin{abstractEN}
+This report describes the \texttt{tulthesis} package for Technical university of
+Liberec thesis typesetting using the \LaTeX\ typographic system.
+\end{abstractEN}
+
+\clearpage
+
+\begin{acknowledgement}
+Rád bych poděkoval všem, kteří přispěli ke vzniku tohoto dílka.
+\end{acknowledgement}
+
+\tableofcontents
+
+\clearpage
+
+%\begin{abbrList}
+%\textbf{TUL} & Technická univerzita v~Liberci \\
+%\end{abbrList}
+\chapter{Úvod}
+Nedílnou součástí pregraduální přípravy budoucích učitelů informatiky základních i~středních škol je výuka programováni a teorie algoritmů. Toto téma je v~součastnosti získává na popularitě i na středních a základních školách, kde je mu věnováno stále více pozornosti. Výuka úvodu do programování a algoritmického myšení je nejen obsažena v rámcovém vzdělávacím programu pro gymnázia a některé odborné střední školy, ale v uzpůsobené podobě se objevuje~i ve výuce na školách základních \parencite{t03}, kde se mohou mladí žáci setkat se speciálními programovacími jazyky pro děti.
+
+
+\begin{table}[ht]
+\hyphenpenalty=10000
+\scriptsize
+\center
+    \begin{tabular}{L{2cm} L{4cm} L{1cm} L{5cm}}
+   \specialrule{.15em}{.05em}{.05em}  \textbf{univerzita}              & \textbf{fakulta}    &\textbf{typ }                            & \textbf{program}                   \\ \specialrule{.15em}{.05em}{.05em} 
+UJEP&  Přírodovědecká fakulta & Bc.                   & Informatika            \\ \hline
+ZČU & Fakulta pedagogická& Bc.& Informatika se zaměřením na vzdělávání\\ 
+&Fakulta pedagogická& NMgr.&Učitelství informatiky pro ZŠ\\ \hline
+JU & Pedagogická fakulta&Bc.& Informační technologie se zaměřením na vzdělávání \\
+JU & Pedagogická fakulta&NMgr.&Učitelství informatiky pro 2. stupeň základních škol \\
+JU & Přírodovědecká fakulta&Bc.&Informatika pro vzdělávání \\ 
+JU & Přírodovědecká fakulta&NMgr.&Učitelství informatiky pro střední školy\\ \hline
+MUNI & Fakulta informatiky&Bc.&Informatika a druhý obor \\ 
+MUNI & Fakulta informatiky&NMgr.&Učitelství informatiky pro střední školy\\ \hline
+UPOL & Přírodovědecká fakulta&Bc.&Informatika pro vzdělávání\\
+UPOL & Přírodovědecká fakulta&NMgr.&Učitelství informatiky pro střední školy\\ \hline
+OU & Přírodovědecká fakulta&Bc.&Informatika (dvouoborové)\\
+OU & Přírodovědecká fakulta&NMgr.&Učitelství informatiky pro 2. stupeň základních škol a střední školy\\
+OU & Pedagogická fakulta&Bc.&Informační a komunikační technologie se zaměřením na vzdělávání\\ \hline
+UHK &Přirodovědecká fakulta&Bc.&Informatika se zaměřením na vzdělávání\\
+UHK & Pedagogická fakulta&NMgr.&Učitelství pro 2. stupeň ZŠ - informatika\\
+UHK &Pedagogická fakulta&NMgr.&(Učitelství pro střední školy - informatika)\\ \hline
+TUL & Přírodovědně-humanitní a pedagogická&Bc.&Informatika se zaměřením na vzdělávání\\
+TUL& Přírodovědně-humanitní a pedagogická&NMgr.&Učitelství informatiky pro střední školy\\
+TUL& Přírodovědně-humanitní a pedagogická&NMgr.&Učitelství informatiky pro 2. stupeň základní školy\\ \hline
+UK&Matematicko-fyzikální fakulta&Bc.&Informatika se zaměřením na vzdělávání\\
+UK&Matematicko-fyzikální fakulta&NMgr.&Učitelství informatiky\\
+UK&Pedagogická fakulta&Bc.&Informační technologie\\
+UK & Pedagogická fakulta&NMgr.&Informační a komunikační technologie\\ \hline
+UTB&Fakulta aplikované informatiky&NMgr.&Učitelství informatiky pro střední školy\\
+\specialrule{.15em}{.05em}{.05em} 
+    \end{tabular}
+\end{table}
+
+
+
+
+
+
+\chapter{Textová analýza}
+\section{Popis vzorku}
+\section{Popis způsobu analýzy}
+\section{Výsledky}
+\chapter{Návrh konceptu pregraduální přípravy}
+\section{ZŠ}
+\section{SŠ}
+\chapter{Závěr}
+\textcolor{gray}{\Blindtext}
+\printbibliography[title={Reference bibliography},heading={bibnumbered}]
+
+\listoftables
+
+%\begin{quote}
+%l,,Programming a computer means nothing more or less than communicating to it in a language
+%that it and the human user can both understand. ``\citep{Češka1994}
+%\end{quote}
+%\chapquote{,,Programming a computer means nothing more or less than \mbox{communicating} to it in a language
+%that it and the human user can both understand. ``}{Lewis Carroll}{Alice in Wonderland}
+\end{document}

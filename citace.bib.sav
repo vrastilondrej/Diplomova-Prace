@@ -280,4 +280,18 @@
   keywords  = {Czech universities},
 }
 
+@InProceedings{proctor2016,
+  author    = {Proctor, Chris and Blikstein, Paulo},
+  title     = {Grounding How We Teach Programming in Why We Teach Programming},
+  booktitle = {Constructionism in Action 2016},
+  year      = {2016},
+  isbn      = {978-616-92726-0-1},
+}
+
+@InProceedings{,
+  author    = {Kalaš, Ivan},
+  title     = {ScratchMaths: vzdelávací obsah a princípy tvorby},
+  booktitle = {Spojená medzinárodná konferencia DidInfo\&DidactIG 2017},
+}
+
 @Comment{jabref-meta: databaseType:biblatex;}

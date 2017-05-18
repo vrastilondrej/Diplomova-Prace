@@ -241,9 +241,9 @@
   year   = {2004},
 }
 
-@Misc{greenfoot,
-  author  = {ahoj neco},
-  title   = {About Greenfoot:},
+@WWW{greenfoot,
+  author  = {Greenfoot},
+  title   = {About Greenfoot},
   url     = {https://www.greenfoot.org/overview},
   journal = {Greenfoot | About Greenfoot},
 }
