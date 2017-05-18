@@ -170,11 +170,12 @@
 }
 
 @Online{lessner2015,
-  author = {Dan Lessner},
-  editor = {Dan Lessner},
-  title  = {Povinné programování od první třídy — zamkněte děti doma!},
-  year   = {2015},
-  url    = {http://ucime-informatiku.blogspot.co.id/2015/10/povinne-programovani-od-prvni-tridy.html},
+  author   = {Dan Lessner},
+  editor   = {Dan Lessner},
+  title    = {Povinné programování od první třídy — zamkněte děti doma!},
+  year     = {2015},
+  url      = {http://ucime-informatiku.blogspot.co.id/2015/10/povinne-programovani-od-prvni-tridy.html},
+  subtitle = {online},
 }
 
 @Book{england2013,
@@ -288,10 +289,14 @@
   isbn      = {978-616-92726-0-1},
 }
 
-@InProceedings{,
+@InProceedings{kalas2016,
   author    = {Kalaš, Ivan},
   title     = {ScratchMaths: vzdelávací obsah a princípy tvorby},
   booktitle = {Spojená medzinárodná konferencia DidInfo\&DidactIG 2017},
+  year      = {2016},
+  publisher = {UMB Banská Bystrica},
+  location  = {Banská Bystrica},
+  pages     = {16-24},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}
