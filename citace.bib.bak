@@ -289,13 +289,29 @@
   isbn      = {978-616-92726-0-1},
 }
 
-@InProceedings{,
+@InProceedings{kalas2016,
   author    = {Kalaš, Ivan},
   title     = {ScratchMaths: vzdelávací obsah a princípy tvorby},
   booktitle = {Spojená medzinárodná konferencia DidInfo\&DidactIG 2017},
+  year      = {2016},
   publisher = {UMB Banská Bystrica},
   location  = {Banská Bystrica},
   pages     = {16-24},
+}
+
+@Article{fokjtik2013,
+  author   = {FOJTIK, Rostislav},
+  title    = {Moderní přístupy k výuce programování},
+  journal  = {JTIE},
+  year     = {2013},
+  volume   = {5},
+  number   = {1},
+  pages    = {58--62},
+  issn     = {1803537X},
+  doi      = {10.5507/jtie.2013.008},
+  url      = {http://jtie.upol.cz/cz/artkey/jti-201301-0008.php},
+  abstract = {Cilem prispevku je predstavit vhodne moderni zpusoby vyuky programovani. Podle vysledku provedenych pruzkumu na zakladnich a strednich skolach je mozne konstatovat, ze vyuka programovani a algoritmizace neni dostatecne vyuzivana. Pripadne se pouzivaji mene vhodne postupy a metodiky pro vyuku programovani. Na zaklade provedenych experimentu ukazuje prispevek moznosti vyuky programovani metodikou object-first, jeji vyhody i uskali. Vyber prihodnych postupu pri vyuce a vhodnych vyvojovych nastroju.},
+  keywords = {object-first; objektove orientovane programovani; vyuka programovani},
 }
 
 @Comment{jabref-meta: databaseType:biblatex;}
