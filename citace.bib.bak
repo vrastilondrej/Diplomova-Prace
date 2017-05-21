@@ -31,14 +31,13 @@
   journal   = {Proceedings of 5th Internaitonal Conference ISSEP},
 }
 
-@Thesis{berki2016,
-  author      = {Jan Berki},
-  title       = {Projektované, realizované a dosažené ICT kurikulum na základních školách},
-  type        = {phdthesis},
-  institution = {ahoj},
-  year        = {2016},
-  subtitle    = {Plzeň. Diplomová práce. Západočeská univerzita v Plzni. Fakulta filozofická.},
-  note        = {Plzeň. Disertační práce. Jihočeská univerzita v Českých Budějovicích. Pedagogická fakulta. Katedra informatiky. Školitel doc. PhDr. Alena Hošpesová, Ph.D.},
+@PhdThesis{berki2016,
+  author = {Berki, Jan},
+  title  = {Projektované, realizované a dosažené ICT kurikulum na základních školách},
+  year   = {2016},
+  type   = {Disertační práce},
+  url    = {http://theses.cz/id/y5olfe/},
+  school = {Jihočeská univerzita v Českých Budějovicích, Pedagogická fakulta, České Budějovice},
 }
 
 @Book{didaktikderinformatik,
@@ -299,7 +298,7 @@
   pages     = {16-24},
 }
 
-@Article{fokjtik2013,
+@Article{fojtik2013,
   author   = {FOJTIK, Rostislav},
   title    = {Moderní přístupy k výuce programování},
   journal  = {JTIE},
