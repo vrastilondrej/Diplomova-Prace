@@ -1,3 +1,4 @@
+\PassOptionsToPackage{table}{xcolor}
 \documentclass[FP,DP]{tulthesis}
 %\hypersetup{
   %  hidelinks = true,
@@ -20,6 +21,7 @@
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{array,booktabs}
+\usepackage{threeparttable}
 
 \def\UrlBreaks{\do\/\do-}
 
@@ -879,21 +881,64 @@ UTB&Fakulta aplikované informatiky&NMgr.&Učitelství informatiky pro střední
 \specialrule{.15em}{.05em}{.05em} 
     \end{tabular}
 \end{table}
+\clearpage
+\begin{table}[]
+\centering
+\scriptsize
+\caption{Počet hodin programování v bakalářských programech}
+\label{my-label}
+\begin{threeparttable}
+\begin{tabular}{|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.8cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|}
+\hline
+PedF
+JU & PřF JU & FI MU & PřF OU & PedF OU &FP TUL& PřF UHK & PřF UJEP & MFF UK & PedF UK & PřF UP & PedF ZČU \\ \hline
+\cellcolor{red!5}1       & \cellcolor{red!10}2      &\cellcolor{red!15} 3     & \cellcolor{red!5}1      &\cellcolor{red!10} 2       &\cellcolor{red!15} 3        &\cellcolor{red!15} 3       & \cellcolor{red!10}2        &\cellcolor{red!20} 4      &\cellcolor{red!10} 2       & \cellcolor{red!20}4      &\cellcolor{red!10} 2        \\ \hline
+\end{tabular}
+\begin{tablenotes}\footnotesize
+\item[*] Blahblah
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
 
 \begin{table}[]
 \centering
 \scriptsize
-\caption{My caption}
+\caption{Počet hodin programování v NMgr. programech}
+\label{my-label}
+\begin{tabular}{|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.8cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|}
+\hline
+PedF
+JU & PřF JU & FI MU & PřF OU &FP TUL ZŠ&FP TUL SŠ& PedF UHK ZŠ& PedF UHK SŠ & MFF UK & PedF UK & PřF UP & FAI UTB& PedF ZČU \\ \hline
+0      & 0    &0     &0  &\cellcolor{red!10} 2       &\cellcolor{red!10} 2        &0     & 0     &0     &0       &0     &0  &0      \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[]
+\centering
+\scriptsize
+\caption{Počet didaktických předmětůí v bakalářských programech}
 \label{my-label}
 \begin{tabular}{|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.8cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|}
 \hline
 PedF
 JU & PřF JU & FI MU & PřF OU & PedF OU &FP TUL& PřF UHK & PřF UJEP & MFF UK & PedF UK & PřF UP & PedF ZČU \\ \hline
-1       & 2      & 3     & 1      & 2       & 3        & 3       & 2        & 4      & 2       & 4      & 2        \\ \hline
+2       &0   &0   &0     &0       &0   &0    & 0       &0      &1       & 0    &0        \\ \hline
 \end{tabular}
 \end{table}
 
-
+\begin{table}[]
+\centering
+\scriptsize
+\caption{Počet didaktických předmětů v NMgr. programech}
+\label{my-label}
+\begin{tabular}{|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.8cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|}
+\hline
+PedF
+JU & PřF JU & FI MU & PřF OU &FP TUL ZŠ&FP TUL SŠ& PedF UHK ZŠ& PedF UHK SŠ & MFF UK & PedF UK & PřF UP & FAI UTB& PedF ZČU \\ \hline
+2     & 3    &2     &1  &1       &2        &0     & 0     &2     &1       &2     &3  &2    \\ \hline
+\end{tabular}
+\end{table}
 
 \chapter{Textová analýza}
 \section{Popis vzorku}
