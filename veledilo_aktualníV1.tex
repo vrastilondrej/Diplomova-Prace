@@ -4,17 +4,22 @@
 %}
 %\usepackage{hyperref}
 \usepackage{blindtext}
+\usepackage{booktabs}
 \usepackage{url}
 \usepackage[obeyFinal]{easy-todo}
 \usepackage{polyglossia}
 \usepackage{enumitem}
 \usepackage{array}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \usepackage{tikz}
 \usepackage{graphicx}
 \usepackage{svg}
 \usepackage{fancyvrb}
 \usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{array,booktabs}
 
 \def\UrlBreaks{\do\/\do-}
 
@@ -789,16 +794,21 @@ V~roce 2013 analyzoval programy pro pregraduální přípravu učitelů informat
 
 \section{Pregradualní příprava učitelů informatiky -- popis zkoumaného vzorku}
 Předmětem zkoumání byly studijní programy zaměřené na pregraduální přípravu učitelů informatiky na základních a středních školách. Studie se zaměřuje čistě na prezenční studium, nejsou jde zahrnutý kombinované ani dálkové programy. Pro relevantnost studie byly do výzkumu zahrnuty pouze programy, do kterých jsou přijímáni studenti pro rok 2017/2018. Tímto opatřením bylo tak zajištěno, že budou zahrnuty pouze programy s~platnou akreditací. V~ČR najdeme i některé programy, které spojují informatiku a technickou výchovu, které jsou zaměřeny hlavně pro budoucí učitele odborných středních škol. Tyto programy se značně svým obsahem liší, proto nejsou do studie zahrnuty.
-Jelikož mohou vysoké školy akreditovat programy vzdělávající budoucí učitele informatiky akreditovat pod různými jmény, byla provedena rešerše otevíraných oborů na všech fakultách vzdělávajících učitele v~ČR. Z~této rešerše vznikl vzorek 25 studijních programů ze 17 fakult 10 univerzit:
+Jelikož mohou vysoké školy akreditovat programy vzdělávající budoucí učitele informatiky akreditovat pod různými jmény, byla provedena rešerše otevíraných oborů na všech fakultách vzdělávajících učitele v~ČR. Z~této rešerše vznikl vzorek 25 studijních programů ze 14 fakult 10 univerzit:\todo{dát oficální názvy nebo nechat názvy s městy?????}
 \begin{itemize}
-\item Univerzita Jana Evangelisty Purkyně v Ústí nad Labem (UJEP) -- Přírodovědecká fakulta (PřF)
-\item Západočeská univerzita v Plzni (ZČU) -- Fakulta pedagogická (PedF)
+\setlength\itemsep{0.2em}
 \item Jihočeská univerzita v Českých Budějovicích (JU) -- Pedagogická fakulta (PedF), Přírodovědecká fakulta (PřF)
-\item Masarykova univerzita v Brně (MUNI) -- Fakulta informatiky (FIN
-\item
-\item
-\\item
+\item Masarykova univerzita v Brně (MU) -- Fakulta informatiky (FI)
+\item Ostravská univerzita -- Pedagogická fakulta (PedF), Přírodovědecká fakulta (PřF)
+\item Technická univerzita v Liberci (TUL) -- Fakulta 	přírodovědně-humanitní a~pedagogická (FPHP)
+\item Univerzita Hradec Králové (UHK) -- Přírodovědecká fakulta (PřF), Pedagogická fakulta (PedF)
+\item Univerzita Jana Evangelisty Purkyně v Ústí nad Labem (UJEP) -- Přírodovědecká fakulta (PřF)
+\item Univerzita Karlova v Praze (UK) -- Matematicko-fyzikální fakulta (MFF), Pedagogická fakulta (PedF)
+\item Univerzita Palackého v Olomouci (UP) -- Přírodovědecká fakulta (PřF)
+\item Univerzita Tomáše Bati ve Zlíně (UTB) -- Fakulta aplikované informatiky (FAI)
+\item Západočeská univerzita v Plzni (ZČU) -- Fakulta pedagogická (PedF)
 \end{itemize}
+
 
 Pro potřeby studie bylo potřeba vybrat předměty, které souvisí s~výukou programování. Na základě zkoumání složení předmětů v~jednotlivých programech bylo vytvořeno 5 skupin předmětů, jenž mají souvislost s~programováním a algoritmizací.  Jelikož ze sylabů předmětů se nedá zjistit časová dotace, která je jednotlivým tématům věnována, do jednotlivých kategorii byl předmět zařazen v~případě, pokud se v~něm vyskytuje níže popsané téma a to  v~jakékoliv míře. Pokud sylabus předmětu obsahuje témata z~více kategorií, je zařazen do té kategorie, ze které jeho sylabus obsahuje více témat.
 \vspace{2mm}\begin{itemize}[nosep]
@@ -836,42 +846,52 @@ Co je možné porovnat:
 
 %{\renewcommand{\arraystretch}{1.2}% for the vertical padding
 \begin{table}[ht]
-\hyphenpenalty=10000
 \scriptsize
 \center
-    \begin{tabular}{L{2cm} L{4cm} L{1cm} L{5cm}}
-   \specialrule{.15em}{.05em}{.05em}  \textbf{univerzita}              & \textbf{fakulta}    &\textbf{typ }                            & \textbf{program}                   \\ \specialrule{.15em}{.05em}{.05em} 
+\begin{tabular}{|L{1cm}| L{4cm}| L{1cm}|L{5cm}|}
+\specialrule{.15em}{.05em}{.05em}  \textbf{uni.}              & \textbf{fakulta}    &\textbf{typ }                            & \textbf{program}                   \\ \specialrule{.15em}{.05em}{.05em}
+\multirow{4}{*}[-2.2em]{JU}&\multirow{2}{*}[-0.7em]{Pedagogická fakulta}&Bc.& Informační technologie se zaměřením na vzdělávání \\ \cline{3-4}
+&&NMgr.&Učitelství informatiky pro 2. stupeň základních škol \\\cline{2-4}
+& \multirow{2}{*}[-0.8em]{Přírodovědecká fakulta}&Bc.&Informatika pro vzdělávání \\ \cline{3-4}
+&&NMgr.&Učitelství informatiky pro střední školy\\ \hline 
+\multirow{2}{*}[-0.8em] {MU} &\multirow{2}{*}[-0.8em] {Fakulta informatiky} &Bc.&Informatika a druhý obor \\ \cline{3-4}
+&&NMgr.&Učitelství informatiky pro střední školy\\ \hline
+\multirow{3}{*}[-0.8em] {OU} & \multirow{2}{*}[-0.8em] {Přírodovědecká fakulta} &Bc.&Informatika (dvouoborové)\\\cline{3-4}
+&&NMgr.&Učitelství informatiky pro 2. stupeň základních škol a střední školy\\\cline{2-4}
+& Pedagogická fakulta&Bc.&Informační a komunikační technologie se zaměřením na vzdělávání\\ \hline
+\multirow{3}{2cm}[-1.2em]{TUL} &\multirow{3}{4cm}[-1.2em]{Přírodovědně-humanitní
+ a~pedagogická}&Bc.&Informatika se zaměřením na vzdělávání\\\cline{3-4}
+&&\multirow{2}{2cm}[-0.2em]{NMgr.}&Učitelství informatiky pro střední školy\\\cline{4-4}
+&&&Učitelství informatiky pro 2. stupeň základní školy\\ \hline
+\multirow{3}{*}[-1.2em] {UHK} &Přírodovědecká fakulta&Bc.&Informatika se zaměřením na vzdělávání\\\cline{2-4}
+&\multirow{2}{*}[-0.8em] {Pedagogická fakulta} &\multirow{2}{2cm}[-0.2em]{NMgr.}&Učitelství pro 2. stupeň ZŠ - informatika\\\cline{4-4}
+&&&(Učitelství pro střední školy - informatika)\\ \hline
 UJEP&  Přírodovědecká fakulta & Bc.                   & Informatika            \\ \hline
-ZČU & Fakulta pedagogická& Bc.& Informatika se zaměřením na vzdělávání\\ 
-&Fakulta pedagogická& NMgr.&Učitelství informatiky pro ZŠ\\ \hline
-JU & Pedagogická fakulta&Bc.& Informační technologie se zaměřením na vzdělávání \\
-JU & Pedagogická fakulta&NMgr.&Učitelství informatiky pro 2. stupeň základních škol \\
-JU & Přírodovědecká fakulta&Bc.&Informatika pro vzdělávání \\ 
-JU & Přírodovědecká fakulta&NMgr.&Učitelství informatiky pro střední školy\\ \hline
-MUNI & Fakulta informatiky&Bc.&Informatika a druhý obor \\ 
-MUNI & Fakulta informatiky&NMgr.&Učitelství informatiky pro střední školy\\ \hline
-UPOL & Přírodovědecká fakulta&Bc.&Informatika pro vzdělávání\\
-UPOL & Přírodovědecká fakulta&NMgr.&Učitelství informatiky pro střední školy\\ \hline
-OU & Přírodovědecká fakulta&Bc.&Informatika (dvouoborové)\\
-OU & Přírodovědecká fakulta&NMgr.&Učitelství informatiky pro 2. stupeň základních škol a střední školy\\
-OU & Pedagogická fakulta&Bc.&Informační a komunikační technologie se zaměřením na vzdělávání\\ \hline
-UHK &Přírodovědecká fakulta&Bc.&Informatika se zaměřením na vzdělávání\\
-UHK & Pedagogická fakulta&NMgr.&Učitelství pro 2. stupeň ZŠ - informatika\\
-UHK &Pedagogická fakulta&NMgr.&(Učitelství pro střední školy - informatika)\\ \hline
-TUL & Přírodovědně-humanitní a pedagogická&Bc.&Informatika se zaměřením na vzdělávání\\
-TUL& Přírodovědně-humanitní a pedagogická&NMgr.&Učitelství informatiky pro střední školy\\
-TUL& Přírodovědně-humanitní a pedagogická&NMgr.&Učitelství informatiky pro 2. stupeň základní školy\\ \hline
-UK&Matematicko-fyzikální fakulta&Bc.&Informatika se zaměřením na vzdělávání\\
-UK&Matematicko-fyzikální fakulta&NMgr.&Učitelství informatiky\\
-UK&Pedagogická fakulta&Bc.&Informační technologie\\
-UK & Pedagogická fakulta&NMgr.&Informační a komunikační technologie\\ \hline
-UTB&Fakulta aplikované informatiky&NMgr.&Učitelství informatiky pro střední školy\\
+\multirow{4}{*}[-0.2em]{UK} &\multirow{2}{*}[-0.2em]{Matematicko-fyzikální fakulta}&Bc.&Informatika se zaměřením na vzdělávání\\ \cline{3-4}
+&&NMgr.&Učitelství informatiky\\\cline{2-4}
+&\multirow{2}{*}[-0.2em]{Pedagogická fakulta}&Bc.&Informační technologie\\\cline{3-4}
+&&NMgr.&Informační a komunikační technologie\\ \hline
+\multirow{2}{*}[-0.8em] {UP} & \multirow{2}{*}[-0.8em] {Přírodovědecká fakulta}&Bc.&Informatika pro vzdělávání\\\cline{3-4}
+&&NMgr.&Učitelství informatiky pro střední školy\\ \hline
+UTB&Fakulta aplikované informatiky&NMgr.&Učitelství informatiky pro střední školy\\ \hline
+\multirow{2}{*}[-0.2em] {ZČU}& \multirow{2}{*}[-0.2em] {Fakulta pedagogická}& Bc.& Informatika se zaměřením na vzdělávání\\ \cline{3-4}
+&& NMgr.&Učitelství informatiky pro ZŠ\\ \hline
 \specialrule{.15em}{.05em}{.05em} 
     \end{tabular}
 \end{table}
 
-
-
+\begin{table}[]
+\centering
+\scriptsize
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.8cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|C{0.7cm}|}
+\hline
+PedF
+JU & PřF JU & FI MU & PřF OU & PedF OU &FP TUL& PřF UHK & PřF UJEP & MFF UK & PedF UK & PřF UP & PedF ZČU \\ \hline
+1       & 2      & 3     & 1      & 2       & 3        & 3       & 2        & 4      & 2       & 4      & 2        \\ \hline
+\end{tabular}
+\end{table}
 
 
 

@@ -136,7 +136,6 @@
   title        = {Didaktika informatiky na startu},
   booktitle    = {Oborové didaktiky : vývoj – stav – perspektivy},
   year         = {2015},
-  maintitle    = {asdsadasd},
   publisher    = {Masarykova univerzita},
   location     = {Brno},
   isbn         = {978-80-210-7769-0},
@@ -219,7 +218,7 @@
 }
 
 @InProceedings{hajek2015,
-  author    = {Hájek, Zdeněk. and Vasaráb Peter},
+  author    = {Hájek, Zdeněk and Vasaráb Peter},
   title     = {Skúsenosti s programovaním na základnej škole},
   booktitle = {Didinfo 2015},
   year      = {2015},
@@ -270,14 +269,18 @@
 }
 
 @InProceedings{lessner2013,
-  author    = {Lessner, Daniel},
-  title     = {Výuka efektivity algoritmů na gymnáziích},
-  booktitle = {Journal of Technology and Information Education},
-  year      = {2013},
-  volume    = {1},
-  issn      = {1803-537X},
-  journal   = {Journal of Technology and Information Education},
-  keywords  = {Czech universities},
+  author   = {LESSNER, Daniel},
+  title    = {VYUKA EFEKTIVITY ALGORITMU NA GYMNAZIICH},
+  year     = {2013},
+  volume   = {5},
+  number   = {1},
+  pages    = {12--20},
+  doi      = {10.5507/jtie.2013.002},
+  url      = {http://jtie.upol.cz/cz/artkey/jti-201301-0002.php},
+  abstract = {Prispevek uvadi dilci vysledky experimentalni vyuky informatiky na gymnaziich. Vyuka informatiky na gymnaziich se zameruje predevsim na uzivatelske dovednosti a pomiji vedni stranku informatiky. Pritom z hlediska cilu gymnazialniho vzdelavani se informatika jevi jako slibna oblast, predevsim v souvislosti s klicovou kompetenci k reseni problemu. Nas vyzkum vychazi z predstavy vyuky informatiky jako vedecke discipliny vedle ostatnich tradicnich vednich predmetu, jako jsou fyzika nebo biologie. Sestavili jsme odpovidajici program vyuky a otestovali ho na skupine zaku jednoho prazskeho gymnazia. V tomto prispevku uvadime podrobnejsi popis modulu zamereneho na problematiku efektivity a vysledky jeho vyuky. Ukazuje se, ze pri vhodnem nastaveni vzdelavacich cilu je mozne i toto pomerne abstraktni a narocne tema do gymnazialni vyuky uspesne zaradit.},
+  issn     = {1803537X},
+  journal  = {JTIE},
+  keywords = {teoreticka informatika; slozitost algoritmu; experimentalni vyuka},
 }
 
 @InProceedings{proctor2016,
