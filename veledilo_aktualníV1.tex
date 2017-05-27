@@ -22,6 +22,7 @@
 \usepackage{multirow}
 \usepackage{array,booktabs}
 \usepackage{threeparttable}
+\usepackage{csquotes}
 
 \def\UrlBreaks{\do\/\do-}
 
@@ -112,7 +113,7 @@ Rád bych poděkoval všem, kteří přispěli ke vzniku tohoto dílka.
 \chapter{Úvod}
 Nedílnou součástí pregraduální přípravy budoucích učitelů informatiky základních i~středních škol je výuka programováni a teorie algoritmů. Toto téma je v~současnosti získává na popularitě i na středních a základních školách, kde je mu věnováno stále více pozornosti. Výuka úvodu do programování a algoritmického myšlení je nejen obsažena v~rámcovém vzdělávacím programu pro gymnázia a některé odborné střední školy, ale v~uzpůsobené podobě se objevuje~i ve výuce na školách základních, kde se mohou mladí žáci setkat se speciálními programovacími jazyky pro děti.
 
-Aby mohla být správně provedena didaktická transformace směrem od učiva k~žákovi, musí její původce -- učitel mít dostatečný vhled do problematiky a~ patřičné vzdělání v~příslušném tématu. Jednou z~hlavních premis je kvalitní vzdělání v~rámci pregraduální přípravy, ve které by měl student -- budoucí učitel získat vhled do tématu natolik, aby dokázal obstojně předat znalosti svým žákům. Na kvalitu pregraduální přípravy má vliv mnoho aspektu, jedním z~nich je i relevance a~aktualita\todo{čeho ale? upravit}, které mají pro informatiku, jakožto mladý a dynamicky se rozvíjející obor velký význam. Fakulty připravující učitele informatiky by měly pružně reagovat na moderní trendy ve výuce a uspokojit poptávku studentů po kvalitním a hlavně využitelném vzdělání, které budou moci využít ve své budoucí praxi,nehledě na to, že z~některých studentů se mohou stát i vysokoškolští pedagogové.  V~dnešní době se na našich základních a~středních školách začínají využívat pro školní prostředí nová témata jako je robotika nebo unplugged teaching, pro která je znalost algoritmizace nutná. \todo{trošku věta navíc}
+Aby mohla být správně provedena didaktická transformace směrem od učiva k~žákovi, musí její původce -- učitel mít dostatečný vhled do problematiky a~ patřičné vzdělání v~příslušném tématu. Jednou z~hlavních premis je kvalitní vzdělání v~rámci pregraduální přípravy, ve které by měl student -- budoucí učitel získat vhled do tématu natolik, aby dokázal obstojně předat znalosti svým žákům.  Protože je informatika mladý a dynamicky se rozvíjející obor, na kvalitu pregraduální přípravy má vliv i~relevance a~aktualita vyučovaných témat. V~dnešní době se na našich základních a~středních školách začínají využívat pro školní prostředí nová témata jako je robotika nebo unplugged teaching, pro která je znalost algoritmizace nutná. Fakulty připravující učitele informatiky by měly pružně reagovat na moderní trendy ve výuce a uspokojit poptávku studentů po kvalitním a hlavně využitelném vzdělání, které budou moci využít ve své budoucí praxi,nehledě na to, že z~některých studentů se mohou stát i vysokoškolští pedagogové.  
 
 Jak si naše vysoké školy vedou ve výuce programování a algoritmizace? Následují moderní trendy a požadavky zaměstnavatelů budoucích absolventů? Je pořadí předmětů během studia smysluplné? Dá se vysledovat podobnost mezi programy napříč republikou? Existuje  jeden nejvhodnější způsob jak učit programovaní budoucí učitele, nebo je možnost volit z~více cest?
 
@@ -123,7 +124,7 @@ Jak si naše vysoké školy vedou ve výuce programování a algoritmizace? Nás
 % KAPITOLA PROGRAMOVÁNÍ
 % **********************
 \chapter{Programování}
-Pokud máme zkoumat pregraduální přípravu učitelů informatiky v~oblasti programování, měli bychom odpovědět na důležitou otázku -- Proč se vlastně zařazuje výuka programování do přípravy budoucích učitelů informatiky? Jaký zde má smysl?\todo{opakuje se na konci odstavce} Definujeme nejdřív co je algoritmizace a programování, jak jsou tato témata zakotvena v~našich kurikulárních dokumentech a nakonec odpovíme na dvě důležité otázky: Proč by vlastně mělo být součástí pregraduální přípravy budoucích učitelů informatiky na VŠ a jakým způsobem může být vyučováno.
+Pokud máme zkoumat pregraduální přípravu učitelů informatiky v~oblasti programování, měli bychom nejdříve odpovědět na důležitou otázku --Jak definuje odborná literatura programování a algoritmizaci? Dále je třeba zkoumat, zda jsou tato témata zakotvena v rámcovách vzdělávacích programech základních a středních škol v ČR a zahraničí, abychom zjistili, zda se budoucí učitel s těmito tématy může setkat. Nakonec na základě zkoumání odborných zrdojů odpovíme na dvě důležité otázky: Proč by vlastně mělo být programování a algoritmizace součástí pregraduální přípravy budoucích učitelů informatiky na VŠ? Jakým způsobem můžou být tato témata vyučována?
 % podkapitola  Algoritmus a programování -- odborné definice a vztahy
 % **********************
 \section{Algoritmus a algoritmizace -- definice pojmů}
@@ -187,6 +188,7 @@ Ve \textbf{Funkcionálním paradigmatu}
 je programem výraz, který se skládá z~funkcí s~podobnou strukturou jako mají funkce matematické. Jedna funkce může být argumentem jiné funkce. Po spuštění proběhne zjednodušení tohoto výrazu až do podoby, kdy zjednodušit dále nelze.  Neexistuje zde princip modifikovatelné paměti jako v~imperativním paradigmatu \citep*{skavrda}. 
 
 V~\textbf{logickém paradigmatu} je program brán jako soubor logických formulí -- axiomů, které popisují vztahy a vlastnosti nějakých objektů a dotaz, který má být na základě těchto pravidel zodpovězen -- dokázán. 
+
 Základní myšlenka \textbf{objektově orientovaného paradigmatu} se zakládá na představě, že reálný svět je množství objektů, které spolu navzájem komunikují. Definujeme zde skupiny prvků s~podobnými vlastnostmi nazýváme třídy. Na rozdíl od imperativního paradigmatu, ve kterém jsou funkce považovány za aktivního činitele modifikujícího pasivně uložená data, objektově orientované paradigma považuje za aktivní v~paměti uložené objekty a za funkce jsou jen pasivní zprávy, které si objekty mezi sebou posílají.
 Přehlednou tabulku paradigmat uvádí Bolshakova \citeyearpar[s.~287]{bolshakova}:
 {\renewcommand{\arraystretch}{1.4}% for the vertical padding
@@ -812,7 +814,9 @@ Jelikož mohou vysoké školy akreditovat programy vzdělávající budoucí uč
 \end{itemize}
 
 
-Pro potřeby studie bylo potřeba vybrat předměty, které souvisí s~výukou programování. Na základě zkoumání složení předmětů v~jednotlivých programech bylo vytvořeno 5 skupin předmětů, jenž mají souvislost s~programováním a algoritmizací.  Jelikož ze sylabů předmětů se nedá zjistit časová dotace, která je jednotlivým tématům věnována, do jednotlivých kategorii byl předmět zařazen v~případě, pokud se v~něm vyskytuje níže popsané téma a to  v~jakékoliv míře. Pokud sylabus předmětu obsahuje témata z~více kategorií, je zařazen do té kategorie, ze které jeho sylabus obsahuje více témat.
+Pro potřeby studie bylo potřeba vybrat předměty, které souvisí s~výukou programování. V prvním kroku byli analyzovány názvy předmětů v získaných studijních programech a na základě toho sestavena  množina klíčových slov, které by se mohla objevit v názvech předmětů, které souvisí s tématem programování a algoritmizace nebo příbuzných tématech. Tato množina obsahovala např. tyto klíčová slova:\begin{displayquote}
+\textit{programování}, \textit{programovací jazyk}, \textit{paradigma}, jména různých programovacích jazyků jako \textit{Java}, \textit{C++}, dále slova související s teorií alogoritmu jako \textit{algoritmus}, \textit{datové struktury}, \textit{složitost}, \textit{vyčíslitelnost}, klíčová slova, která by se mohla objevit v názvu souvisejících s didaktikou programování a robotikou \textit{didaktika}, \textit{robotika} nebo slova, která by mohla souviset s předměty obsahující programovací jazyky určené pro vývoj webových aplikací \textit{www}, \textit{web}.
+\end{displayquote}   Na základě zkoumání složení předmětů v~jednotlivých programech bylo vytvořeno 5 skupin předmětů, jenž mají souvislost s~programováním a algoritmizací.  Jelikož ze sylabů předmětů se nedá zjistit časová dotace, která je jednotlivým tématům věnována, do jednotlivých kategorii byl předmět zařazen v~případě, pokud se v~něm vyskytuje níže popsané téma a to  v~jakékoliv míře. Pokud sylabus předmětu obsahuje témata z~více kategorií, je zařazen do té kategorie, ze které jeho sylabus obsahuje více témat.
 \vspace{2mm}\begin{itemize}[nosep]
   	\item \textbf{Výuka programování} -- do této kategorie byly zařazeny všechny předměty, jejímž obsahem je výuka programování či teorie přímo související s~programování jako je teorie paradigmat programování. 
 	\item \textbf{Teoretická informatika} -- do této kategorie je zařazen předmět, pokud alespoň částí jeho obsahu je teorie informatiky, která s~programováním souvisí. Jedná se o~teorii automatů a formálních jazyků, gramatiky, složitosti a vyčíslitelnosti.
