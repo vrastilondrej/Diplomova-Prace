@@ -51,6 +51,7 @@
 \tikzstyle{io} = [rectangle, rounded corners, minimum width=1cm, minimum height=1cm,text centered, draw=black,text width=2cm,fill=orange!20]
 \tikzstyle{process} = [rectangle, minimum width=1cm, minimum height=0.8cm, text centered, draw=black, fill=orange!30,text width=2.5cm]
 \tikzstyle{decision} = [rectangle, rounded corners, minimum width=1cm, minimum height=0.8cm,text centered, draw=black,text width=2cm]
+\tikzstyle{postup} = [rectangle, rounded corners, minimum width=1cm, minimum height=0.8cm,text centered, draw=black,text width=10cm]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 \tikzstyle{arrow2} = [thick,-,>=stealth]
 
@@ -814,17 +815,33 @@ Jelikož mohou vysoké školy akreditovat programy vzdělávající budoucí uč
 \end{itemize}
 
 
-Pro potřeby studie bylo potřeba vybrat předměty, které souvisí s~výukou programování. V prvním kroku byli analyzovány názvy předmětů v získaných studijních programech a na základě toho sestavena  množina klíčových slov, které by se mohla objevit v názvech předmětů, které souvisí s tématem programování a algoritmizace nebo příbuzných tématech. Tato množina obsahovala např. tyto klíčová slova:\begin{displayquote}
+Pro potřeby studie bylo potřeba vybrat předměty, které souvisí s~výukou programování. V prvním kroku byli analyzovány názvy předmětů v získaných studijních programech a na základě této analýzy a poznatků z teoretické části práce sestavena  množina klíčových slov a sousloví, které by se mohly objevit v názvech předmětů, které souvisí s tématem programování a algoritmizace nebo příbuzných tématech. Tato množina obsahovala např. tyto klíčová slova:\begin{displayquote}
 \textit{programování}, \textit{programovací jazyk}, \textit{paradigma}, jména různých programovacích jazyků jako \textit{Java}, \textit{C++}, dále slova související s teorií alogoritmu jako \textit{algoritmus}, \textit{datové struktury}, \textit{složitost}, \textit{vyčíslitelnost}, klíčová slova, která by se mohla objevit v názvu souvisejících s didaktikou programování a robotikou \textit{didaktika}, \textit{robotika} nebo slova, která by mohla souviset s předměty obsahující programovací jazyky určené pro vývoj webových aplikací \textit{www}, \textit{web}.
-\end{displayquote}   Na základě zkoumání složení předmětů v~jednotlivých programech bylo vytvořeno 5 skupin předmětů, jenž mají souvislost s~programováním a algoritmizací.  Jelikož ze sylabů předmětů se nedá zjistit časová dotace, která je jednotlivým tématům věnována, do jednotlivých kategorii byl předmět zařazen v~případě, pokud se v~něm vyskytuje níže popsané téma a to  v~jakékoliv míře. Pokud sylabus předmětu obsahuje témata z~více kategorií, je zařazen do té kategorie, ze které jeho sylabus obsahuje více témat.
-\vspace{2mm}\begin{itemize}[nosep]
-  	\item \textbf{Výuka programování} -- do této kategorie byly zařazeny všechny předměty, jejímž obsahem je výuka programování či teorie přímo související s~programování jako je teorie paradigmat programování. 
-	\item \textbf{Teoretická informatika} -- do této kategorie je zařazen předmět, pokud alespoň částí jeho obsahu je teorie informatiky, která s~programováním souvisí. Jedná se o~teorii automatů a formálních jazyků, gramatiky, složitosti a vyčíslitelnosti.
-	\item\textbf{Teorie algoritmů} -- Do této kategorie je zařazen předmět, pokud je alespoň částí jeho obsahu teorie algoritmů.
-	\item \textbf{Programování v~prostředí WWW } -- do této kategorie jsou zařazeny všechny předměty, které jsou primárně  zaměřeny na tvorbu webových stránek a jejichž součástí je programování v~jazyku JavaScript nebo PHP, případně jiného .
-\item \textbf{Didaktické předměty } -- do této kategorie je zařazen předmět, pokud alespoň částí jeho obsahu je didaktika programování nebo didaktika algoritmizace.
+\end{displayquote}  
+Tyto klíčová slova pak byla použita k sestavení prvotní množiny předmětů, do které byly přidány předměty, u kterých z jejich názvů nebylo jasné jejich zaměření a mohli s algoritmizací nebo programováním souviset, např. předmět s názvem \textit{Vstupně výstupní komunikace}.
+Sylaby předmětů z této prvotní skupiny byly dále podrobnějí zkoumány a  tímto zkoumáním pak předměty rozděleny do čtyř pojmenovaných skupin. Tyto skupiny se dělí podle toho jaká klíčová slova obsahuje části jejich sylabu popísující jednak celkové zaměření předmětu tak i tématický obsah předmětu.
 
+\vspace{2mm}\begin{itemize}
+\setlength\itemsep{0.2em}
+  	\item \textbf{Výuka programování} -- do této kategorie byly zařazeny všechny předměty, jejímž obsahem je výuka konkrétního programovacího jazyka nebo teorie přímo související s~programování jako je teorie paradigmat programování. V sylabech těchto předmětů najdeme klíčové pojmy: \textit{programování}, \textit{programovací jazyk} \textit{programovací paradigma}, názvy konkrétních programovacích paradigmat jako \textit{objektově orientované}, \textit{funkcionální},  názvy konkrétních programovacích jazyků jako \textit{Java}, \textit{C++}.
+\item \textbf{Výuka algoritmizace} -- do této kategorie jsou zařazeny všechny předměty, jež se zaměřují na výuku teorie algoritmů, datových struktur a teorie složitosti a vyčíslitelnosti algoritmů.. Klíčové pojmy: \textit{algoritmizace}, \textit{algoritmus}, \textit{datové struktury}, \textit{složitost}, \textit{vyčíslitelnost}
+\item \textbf{Didaktické předměty} -- do této kategorie jsou zařazeny předměty, které se zaměřují na didaktiku programování nebo didaktiku algoritmizace, či jsou tato témata obsažena v rámci didaktiky informatiky. Dále jsou zde zaměřeny předměty v nichž je zařazena výuka dětských programovacích jazyků a robotiky. Klíčové pojmy: \textit{didaktika programování}, \textit{didaktika algoritmizace}, \textit{dětská programovací jazyk}, \textit{robotika}
+	\item \textbf{Programování v~prostředí WWW } -- do této kategorie jsou zařazeny všechny předměty v nichž se objevuje programování webových aplikací či stránek v některém z programovacích jazyků pro tento účel vhodných. V sylabech těchto předmětů najdeme klíčové pojmy: \textit{PHP}, \textit{JavaScript}, \textit{webová aplikace}
 \end{itemize}
+V případě, že předmět obsahuje klíčové pojmy z více skupin, je zařazen do té, která pokrýva větší část jeho obsahu (je této skupině věnováno více témat). Pro zařazení předměty není dána žádná minimální hranice příslušných pojmů, stačí jediná zmínka vztahující se k jedné ze skupin, aby tento předmět do ni byl zařazen (pokud nejsou přítomna témata z jiných skupin. 
+\begin{figure}[h!]
+\centering
+\tikzset{every picture/.append style={font=\fontsize{9}{12}\selectfont}}
+
+\begin{tikzpicture}[node distance=2.5cm]
+ \node (start) [postup] {krok 1\\získání studijních programů všech oborů};
+\node (v1) [postup,below of=start,yshift=0.7cm] {krok 2\\prvotní výběr potencionálně vhodných předmětů na základě výskytu předem definovaných klíčových slov v jejich názvech};
+\node (v2) [postup,below of=v1,yshift=0.2cm] {krok 3\\analýza sylabů potencionálně vhodných předmětů a jejich kategorizace na základě výskytu klíčových pojmů v textu zaměření a obsahu těchto předmětů};
+\draw [arrow] (start) -- (v1);
+\draw [arrow] (v1) -- (v2);
+  \end{tikzpicture}
+\caption{Metodika výběru předmětů do výzkumu} \label{modely}
+\end{figure}
 
 Co je možné porovnat:
 \begin{itemize}
